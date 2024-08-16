@@ -1,5 +1,6 @@
 function App() {
-  return   <h1>Happy Coding!!!! 🚀</h1>; 
+  return   <h1>Hello!Welcome to my page 🚀 - JM Lagumbay</h1>; 
+
   
   
 }
