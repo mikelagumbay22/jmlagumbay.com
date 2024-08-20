@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Container, Group, Burger } from '@mantine/core';
+import { Container, Group, Burger, Image } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-// import { MantineLogo } from '@mantinex/mantine-logo';
+import JmLogo from '../assets/JmlLogo.png';
 import classes from './Navigation.module.css';
 
 const links = [
@@ -31,17 +31,16 @@ function Navigation() {
   ));
 
   return (
-    <Container className={classes.header}>
-      <Container  className={classes.inner}>
-        {/* <MantineLogo size={28} /> */}
+    <header className={classes.header}>
+      <Container size="md" className={classes.inner}>
+      <Image src={JmLogo} alt="JM Lagumbay" className={classes.logo}/>
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Container>
-    </Container>
+    </header>
   );
 }
-
 export default Navigation;

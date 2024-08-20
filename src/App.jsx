@@ -9,6 +9,18 @@ function App() {
       path: "/",
       element: <Homepage />,
     },
+    {
+      path: "/",
+      element: <Homepage />,
+    },
+    {
+      path: "/",
+      element: <Homepage />,
+    },
+    {
+      path: "/",
+      element: <Homepage />,
+    },
   ]);
 
   return (

@@ -32,3 +32,17 @@
   background-color: var(--mantine-color-blue-filled);
   color: var(--mantine-color-white);
 }
+
+
+.logo {
+  max-width: 40px;
+}
+
+parent{
+  display: flex;
+}
+
+.child-1{
+  flex-grow: 1;
+}
+
