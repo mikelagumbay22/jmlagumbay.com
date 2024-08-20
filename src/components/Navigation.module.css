@@ -19,18 +19,18 @@
   padding: 8px 12px;
   border-radius: var(--mantine-radius-sm);
   text-decoration: none;
-  color: var(--mantine-color-gray-7);
+  color: var(--mantine-color-white-7);
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
 }
 
 .link:hover {
-  background-color: var(--mantine-color-gray-0);
+  background-color: var(--mantine-color-white-0);
 }
 
 [data-mantine-color-scheme] .link[data-active] {
-  background-color: var(--mantine-color-blue-filled);
-  color: var(--mantine-color-white);
+  background-color: var(--mantine-color-lime-filled);
+  color: var(--mantine-color-black);
 }
 
 
@@ -38,11 +38,11 @@
   max-width: 40px;
 }
 
-parent{
+/* parent{
   display: flex;
 }
 
 .child-1{
   flex-grow: 1;
-}
+} */
 

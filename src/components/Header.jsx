@@ -1,12 +1,11 @@
-
+import { Title } from '@mantine/core';
 
 function Header() {
-  return (  
-    <>    
-    <h1>JM LAGUMBAY</h1>
-    <h3>I am a Full Stack Web Developer</h3>
+  return (
+    <>
+      <Title order={1} size="5rem" style={{ color: 'lime' }}>JM LAGUMBAY</Title>
+      <Title order={6}>I am a Full Stack Web Developer</Title>
     </>
-
   );
 }
 

@@ -34,13 +34,15 @@ function Navigation() {
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
       <Image src={JmLogo} alt="JM Lagumbay" className={classes.logo}/>
-        <Group gap={5} visibleFrom="xs">
+        <Group gap={5} visibleFrom="sm">
           {items}
         </Group>
 
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" className={classes.link}/>
       </Container>
     </header>
   );
 }
 export default Navigation;
+
+
