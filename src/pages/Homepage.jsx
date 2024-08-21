@@ -4,6 +4,7 @@ import ProfileImage from "../components/ProfileImage";
 import SocialMedia from "../components/SocialMedia";
 import Stacks from "../components/Stacks";
 import WorkExperience from "../components/WorkExperience";
+import Projects from "../components/Projects";
 
 function Homepage() {
   return (
@@ -14,6 +15,7 @@ function Homepage() {
       <ProfileImage />
       <Stacks />
       <WorkExperience />
+      <Projects />
     </>
   );
 }
