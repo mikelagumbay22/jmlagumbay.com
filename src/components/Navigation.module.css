@@ -2,7 +2,6 @@
   height: 56px;
   margin-bottom: 30px;
   width: 100%;
-
 }
 
 .inner {
@@ -10,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .link {
@@ -33,16 +31,14 @@
   color: var(--mantine-color-black);
 }
 
-
 .logo {
   max-width: 40px;
 }
 
-/* parent{
-  display: flex;
+.burger {
+  background-color: azure;
 }
 
-.child-1{
-  flex-grow: 1;
-} */
-
+.burger.hiddenFrom-xs {
+  display: none;
+}

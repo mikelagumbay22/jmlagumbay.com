@@ -16,7 +16,7 @@ h1 {
   line-height: 1.1;
 } */
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
@@ -27,5 +27,11 @@ body {
   background-color: #181818;
   top: 0;
   left: 0;
+  color: rgba(255, 255, 255, 0.87);
+} */
+
+body {
+
+  background-color: #181818;
   color: rgba(255, 255, 255, 0.87);
 }

@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { Container, Group, Burger, Image } from '@mantine/core';
+import { Container, Group, Burger, Image, Drawer, ScrollArea } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import JmLogo from '../assets/JmlLogo.png';
 import classes from './Navigation.module.css';
 
 const links = [
-  { link: '/about', label: 'About' },
-  { link: '/resume', label: 'Resume' },
-  { link: '/projects', label: 'Projects' },
-  { link: '/getintouch', label: 'Get in touch' },
+  { link: '#about', label: 'About' },
+  { link: '#resume', label: 'Resume' },
+  { link: '#projects', label: 'Projects' },
 ];
 
 function Navigation() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
 
   const items = links.map((link) => (
@@ -24,6 +23,13 @@ function Navigation() {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+
+        const section = document.querySelector(link.link);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        close(); // Close the drawer after clicking a link
       }}
     >
       {link.label}
@@ -33,16 +39,32 @@ function Navigation() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-      <Image src={JmLogo} alt="JM Lagumbay" className={classes.logo}/>
-        <Group gap={5} visibleFrom="sm">
+        <Image src={JmLogo} alt="JM Lagumbay" className={classes.logo} />
+        <Group className={classes.linksGroup} gap={5}>
           {items}
         </Group>
-
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" className={classes.link}/>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          className={classes.burger}
+          size="sm"
+        />
       </Container>
+
+      {/* Drawer for mobile view */}
+      <Drawer
+        opened={opened}
+        onClose={close}
+        padding="md"
+        size="100%"
+        className={classes.drawer}
+      >
+        <ScrollArea style={{ height: 'calc(100vh - 60px)' }}>
+          <div className={classes.mobileLinks}>{items}</div>
+        </ScrollArea>
+      </Drawer>
     </header>
   );
 }
+
 export default Navigation;
-
-

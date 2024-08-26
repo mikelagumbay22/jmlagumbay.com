@@ -1,4 +1,5 @@
 import Navigation from "../components/Navigation";
+import About from "../components/About";
 import Header from "../components/Header";
 import ProfileImage from "../components/ProfileImage";
 import SocialMedia from "../components/SocialMedia";
@@ -10,12 +11,18 @@ function Homepage() {
   return (
     <>
       <Navigation />
-      <Header />
+      <div id="about">
+        <Header />
+      </div>
       <SocialMedia />
       <ProfileImage />
-      <Stacks />
-      <WorkExperience />
-      <Projects />
+      <Stacks /> <About />
+      <div id="resume">
+        <WorkExperience />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
     </>
   );
 }
