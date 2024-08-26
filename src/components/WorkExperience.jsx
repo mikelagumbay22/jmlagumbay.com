@@ -2,12 +2,13 @@ import { Title, Table, Image, Text } from "@mantine/core";
 import Tesla from "../assets/Tesla.png";
 import DigitalStorm from "../assets/DigitalStorm.jpg";
 import Sykes from "../assets/Sykes.webp";
+import { IconFile } from '@tabler/icons-react';
 
 function WorkExperience() {
   return (
     <>
       <br />
-      <Title size="2rem" mb="lg" bg="white" style={{ color: 'black' }}> Work Experience</Title>
+      <Title size="2rem" mb="lg" bg="white" style={{ color: 'black' }}>Work Experience</Title>
       <div style={{ width: '1000px', margin: '0 auto' }}>
         <Table
           striped
@@ -31,7 +32,7 @@ function WorkExperience() {
                   src={Tesla}
                   alt="Tesla"
                   bg="white"
-                  />
+                />
               </td>
               <td style={{ textAlign: 'left', padding: '10px' }}>
                 <Text>
@@ -73,6 +74,17 @@ function WorkExperience() {
             </tr>
           </tbody>
         </Table>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+        <Text style={{ marginRight: '10px', fontWeight: 'bold' }}>Here is a copy of my resume</Text>
+        <a
+          href="https://drive.google.com/file/d/1hbwVyUHfXbyPsQ1zYm34HYcorkC0AfkX/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <IconFile size={45} />
+        </a>
       </div>
     </>
   );
