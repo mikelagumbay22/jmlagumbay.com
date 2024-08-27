@@ -40,7 +40,8 @@
 }
 
 .link:hover {
-  background-color: #444444;
+  background-color: lime;
+  color: #000000;
 }
 
 .logo {

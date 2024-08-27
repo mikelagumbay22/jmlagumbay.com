@@ -7,12 +7,13 @@ function Header() {
     <div className={styles.header}>
       <Title 
         order={1} 
-        size="5rem" 
-        style={{ color: 'lime', position: 'relative' }}
+        className={styles.mainTitle}
       >
         JM LAGUMBAY
       </Title>
-      <Title order={6}>I am a Full Stack Web Developer</Title>
+      <Title order={6} className={styles.subTitle}>
+        I am a Full Stack Web Developer
+      </Title>
     </div>
   );
 }

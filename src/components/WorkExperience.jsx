@@ -83,7 +83,7 @@ function WorkExperience() {
           rel="noopener noreferrer"
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <IconFile size={45} />
+          <IconFile size={65} style={{ color:'lime' }}/>
         </a>
       </div>
     </>

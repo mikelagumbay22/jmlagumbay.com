@@ -16,7 +16,7 @@ function Stacks() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   // Adjust icon size based on screen size
-  const iconSize = isMobile ? rem(100) : rem(45);
+  const iconSize = isMobile ? rem(80) : rem(45);
 
   return (
     <>

@@ -5,7 +5,6 @@ import {
   SimpleGrid,
   Container,
   rem,
-  useMantineTheme,
 } from '@mantine/core';
 import { IconDog, IconBackhoe, IconDeviceGamepad } from '@tabler/icons-react';
 import classes from './Projects.module.css';
@@ -32,16 +31,37 @@ const mockdata = [
       'GamersPH is your ultimate gaming hub, offering a vast collection of games across all platforms—from console and PC to mobile. Discover the latest releases, explore classic titles, and stay updated with game reviews, news, and trailers. Whether you’re a casual player or a hardcore gamer, GamersPH has everything you need to elevate your gaming experience.',
     icon: IconDeviceGamepad,
   },
+  {
+    title: 'GAMERS.PH',
+    link: 'https://gamersph.netlify.app/',
+    description:
+      'GamersPH is your ultimate gaming hub, offering a vast collection of games across all platforms—from console and PC to mobile. Discover the latest releases, explore classic titles, and stay updated with game reviews, news, and trailers. Whether you’re a casual player or a hardcore gamer, GamersPH has everything you need to elevate your gaming experience.',
+    icon: IconDeviceGamepad,
+  },
+  {
+    title: 'GAMERS.PH',
+    link: 'https://gamersph.netlify.app/',
+    description:
+      'GamersPH is your ultimate gaming hub, offering a vast collection of games across all platforms—from console and PC to mobile. Discover the latest releases, explore classic titles, and stay updated with game reviews, news, and trailers. Whether you’re a casual player or a hardcore gamer, GamersPH has everything you need to elevate your gaming experience.',
+    icon: IconDeviceGamepad,
+  },
+  {
+    title: 'GAMERS.PH',
+    link: 'https://gamersph.netlify.app/',
+    description:
+      'GamersPH is your ultimate gaming hub, offering a vast collection of games across all platforms—from console and PC to mobile. Discover the latest releases, explore classic titles, and stay updated with game reviews, news, and trailers. Whether you’re a casual player or a hardcore gamer, GamersPH has everything you need to elevate your gaming experience.',
+    icon: IconDeviceGamepad,
+  },
 ];
 
 function Projects() {
-  const theme = useMantineTheme();
+  
   const features = mockdata.map((feature) => (
     <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
       <feature.icon
         style={{ width: rem(50), height: rem(50) }}
         stroke={2}
-        color={theme.colors.blue[6]}
+        color='lime'
       />
       <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
         <a

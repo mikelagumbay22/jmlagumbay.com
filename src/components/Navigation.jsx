@@ -6,7 +6,7 @@ import classes from './Navigation.module.css';
 
 const links = [
   { link: '#about', label: 'About' },
-  { link: '#resume', label: 'Resume' },
+  { link: '#resume', label: 'Work Experience' },
   { link: '#projects', label: 'Projects' },
 ];
 

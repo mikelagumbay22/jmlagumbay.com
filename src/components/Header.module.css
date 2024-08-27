@@ -1,12 +1,24 @@
 /* Header.module.css */
 .header {
   margin-top: 70px; /* Default margin for desktop */
-
+  width: 100%;
+  text-align: center; /* Center align text */
 }
+
+.mainTitle {
+  color: lime;
+  width: 100%;
+  font-size: 5rem; /* Default size for desktop */
+}
+
+
 
 @media (max-width: 768px) {
   .header {
     margin-top: 230px; /* Margin for mobile view */
+  }
 
+  .mainTitle {
+    font-size: 4rem; /* Title size for mobile view */
   }
 }
