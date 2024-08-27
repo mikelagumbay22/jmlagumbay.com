@@ -8,7 +8,6 @@ import {
 } from '@mantine/core';
 import { IconDog, IconBackhoe, IconDeviceGamepad } from '@tabler/icons-react';
 
-
 const mockdata = [
   {
     title: 'BUDDIE.PH',
@@ -30,29 +29,34 @@ const mockdata = [
     description:
       'GamersPH is your ultimate gaming hub, offering a vast collection of games across all platforms—from console and PC to mobile. Discover the latest releases, explore classic titles, and stay updated with game reviews, news, and trailers. Whether you’re a casual player or a hardcore gamer, GamersPH has everything you need to elevate your gaming experience.',
     icon: IconDeviceGamepad,
-  } 
+  }
 ];
 
 function Projects() {
   
   const features = mockdata.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="md" padding="xl" >
+    <Card key={feature.title} shadow="md" radius="lg" padding="xl">
       <feature.icon
-        style={{ width: rem(50), height: rem(50) }}
+        style={{
+          width: rem(60),
+          height: rem(60),
+          backgroundColor: 'lime',
+          borderRadius: rem(10), // Half of the width/height for a circular effect
+        }}
         stroke={2}
-        color='lime'
+        color="black"
       />
-      <Text fz="lg" fw={500}  mt="md">
+      <Text fz="lg" fw={500} mt="md">
         <a
           href={feature.link}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: 'lime', textDecoration: 'none', fontSize:'2rem' }}
+          style={{ color: 'black', fontSize: '2rem', textDecoration: 'underline' }}
         >
           {feature.title}
         </a>
       </Text>
-      <Text fz="sm" mt="sm" >
+      <Text fz="sm" mt="sm">
         {feature.description}
       </Text>
     </Card>

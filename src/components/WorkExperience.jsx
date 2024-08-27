@@ -76,7 +76,7 @@ function WorkExperience() {
         </Table>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-        <Text style={{ marginRight: '10px', fontWeight: 'bold', color:'lime', textDecoration: 'underline',}}>Here is a copy of my resume</Text>
+        <Text style={{ marginRight: '10px', fontWeight: 'bold', color:'lime', textDecoration: 'underline',fontSize:'1.2rem'}}>Here is a copy of my resume</Text>
         <a
           href="https://drive.google.com/file/d/1hbwVyUHfXbyPsQ1zYm34HYcorkC0AfkX/view?usp=sharing"
           target="_blank"
