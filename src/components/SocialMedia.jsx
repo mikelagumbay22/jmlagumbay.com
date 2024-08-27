@@ -25,9 +25,9 @@ function SocialMedia() {
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <IconBrandLinkedin
-            style={{ width: rem(25), height: rem(25) }}
+            style={{ width: rem(30), height: rem(30) }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
         </a>
 
@@ -38,9 +38,9 @@ function SocialMedia() {
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <IconBrandFacebook
-            style={{ width: rem(25), height: rem(25) }}
+            style={{ width: rem(30), height: rem(30) }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
         </a>
 
@@ -51,9 +51,9 @@ function SocialMedia() {
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <IconBrandInstagram
-            style={{ width: rem(25), height: rem(25) }}
+            style={{ width: rem(30), height: rem(30) }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
         </a>
 
@@ -64,9 +64,9 @@ function SocialMedia() {
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <IconBrandGithub
-            style={{ width: rem(25), height: rem(25) }}
+            style={{ width: rem(30), height: rem(30) }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
         </a>
 
@@ -75,9 +75,9 @@ function SocialMedia() {
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <IconMail
-            style={{ width: rem(25), height: rem(25) }}
+            style={{ width: rem(30), height: rem(30) }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
         </a>
       </Flex>

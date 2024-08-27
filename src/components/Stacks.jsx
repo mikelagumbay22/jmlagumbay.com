@@ -29,7 +29,7 @@ function Stacks() {
           <IconBrandHtml5
             style={{ width: iconSize, height: iconSize }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>HTML</Text>
         </div>
@@ -37,7 +37,7 @@ function Stacks() {
           <IconBrandCss3
             style={{ width: iconSize, height: iconSize }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>CSS</Text>
         </div>
@@ -45,7 +45,7 @@ function Stacks() {
           <IconBrandReact
             style={{ width: iconSize, height: iconSize }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>React</Text>
         </div>
@@ -53,7 +53,7 @@ function Stacks() {
           <IconBrandJavascript
             style={{ width: iconSize, height: iconSize }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>Javascript</Text>
         </div>
@@ -61,21 +61,21 @@ function Stacks() {
           <IconBrandNodejs
             style={{ width: iconSize, height: iconSize }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>Node.js</Text>
         </div>
         <div className={styles.gridItem}>
           <SiExpress
             style={{ width: iconSize, height: iconSize }}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>Express</Text>
         </div>
         <div className={styles.gridItem}>
           <SiMongoose
             style={{ width: iconSize, height: iconSize }}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>Mongoose</Text>
         </div>
@@ -83,7 +83,7 @@ function Stacks() {
           <IconBrandMongodb
             style={{ width: iconSize, height: iconSize }}
             stroke={1.5}
-            color="var(--mantine-color-lime-filled)"
+            color="lime"
           />
           <Text>MongoDB</Text>
         </div>
