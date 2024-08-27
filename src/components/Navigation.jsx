@@ -29,7 +29,7 @@ function Navigation() {
           section.scrollIntoView({ behavior: 'smooth' });
         }
 
-        close(); // Close the drawer after clicking a link
+        close(); 
       }}
     >
       {link.label}
@@ -51,15 +51,15 @@ function Navigation() {
         />
       </Container>
 
-      {/* Drawer for mobile view */}
+
       <Drawer
         opened={opened}
         onClose={close}
-        padding="md"
+      
         size="100%"
         className={classes.drawer}
       >
-        <ScrollArea style={{ height: 'calc(100vh - 60px)' }}>
+        <ScrollArea style={{ height: '100vh', width:'100%', backgroundColor: 'white' } }>
           <div className={classes.mobileLinks}>{items}</div>
         </ScrollArea>
       </Drawer>

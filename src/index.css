@@ -1,37 +1,15 @@
-/* :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  width: 100%;
-
-}
 
 
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
-
-/* body {
+body {
   margin: 0;
-  display: flex;
   place-items: center;
   width: 100%;
   min-height: 100vh;
   text-align: center;
   justify-content: center;
-  background-color: #181818;
+  background-color: #000000;
   top: 0;
   left: 0;
   color: rgba(255, 255, 255, 0.87);
-} */
-
-body {
-
-  background-color: #181818;
-  color: rgba(255, 255, 255, 0.87);
 }
+

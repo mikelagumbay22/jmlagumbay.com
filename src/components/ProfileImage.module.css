@@ -1,9 +1,37 @@
 .ProfilePic{
-  max-width: 500px;
+  max-width: 50%;
 }
 
 .container{
   display: flex;
-  padding: 70px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.imagecontainer{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+
+  .ProfilePic{
+    max-width: 100%;
+  }
+  
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .imagecontainer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
 
 }

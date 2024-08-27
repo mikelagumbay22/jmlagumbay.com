@@ -9,7 +9,7 @@ function WorkExperience() {
     <>
       <br />
       <Title size="2rem" mb="lg" bg="white" style={{ color: 'black' }}>Work Experience</Title>
-      <div style={{ width: '1000px', margin: '0 auto' }}>
+      <div style={{ width: 'auto', margin: '0 auto' }}>
         <Table
           striped
           highlightOnHover

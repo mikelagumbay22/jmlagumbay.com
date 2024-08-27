@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  gap: 16px;
+  text-align: center;
+}
+
+/* For screens wider than 750px: 1 column layout */
+@media (min-width: 750px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* For screens between 450px and 750px: 4 columns, 2 rows */
+@media (min-width: 450px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* For screens less than 450px: 2 columns, 4 rows */
+@media (max-width: 450px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

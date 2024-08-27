@@ -1,0 +1,9 @@
+.homepagecontainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-top: 56px; /* Adjust based on the height of your Navigation */
+  padding-bottom: 100px;
+  background-color: black;
+}
