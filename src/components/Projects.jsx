@@ -18,7 +18,7 @@ const mockdata = [
   },
   {
     title: 'PARKRIDGE',
-    link: 'https://parkridge.netlify.app/',
+    link: 'https://parkridgeapp-frontend.onrender.com/',
     description:
       'Parkridge App is a comprehensive community management tool designed to keep residents connected and informed. With features like announcements, facility requests, issue reporting, and construction monitoring, managing your community has never been easier.',
     icon: IconBackhoe,
