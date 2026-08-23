@@ -1,9 +1,4 @@
-import {
-  IconDog,
-  IconBackhoe,
-  IconDeviceGamepad,
-  IconArrowUpRight,
-} from "@tabler/icons-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 const projects = [
   {
@@ -12,7 +7,8 @@ const projects = [
       "A trusted pet care platform for managing pet health records, connecting with verified veterinarians, and booking care — all in one place.",
     link: "https://buddie.ph/",
     tags: ["React", "Node.js", "MongoDB"],
-    Icon: IconDog,
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMkmZq4RaOGMREQEhJ6OaB5UERhuiyascdtQIbfcjxLgEHBH7Ge9AzXXuRtjs5-KDYSXJ0Qt6DUU_PKG53aebfiGl60FAQsoBLqAeuKQsH-zFcN8zZlFlOUZwW2P30sEBcmfjYorSwlJA07hLgxpz9sGvRf1dRV_wQ4VVoUpQ-PefA8T2iuQKC3pyA1zYcg5rTGCV_KhzTHhNkquvoqAD0YHkHJFt_Tyaa2hPTfIOpwvCmVb7HzrJZ",
   },
   {
     title: "PARKRIDGE",
@@ -20,7 +16,8 @@ const projects = [
       "A community management tool keeping residents connected through announcements, facility requests, issue reporting, and construction monitoring.",
     link: "https://parkridgeapp-frontend.onrender.com/",
     tags: ["React", "Node.js", "MongoDB"],
-    Icon: IconBackhoe,
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCbXO39XxY4pPz2KvuG1qKJSD5KTG711UMTspT3SRCKyAsLhfnYqlmtSvumc2Os2rFE0I7L3Lojyr_xWewTnT-fe18-sm3CHPyXewSr50VZaFMsEfSnoykDuB7ozaBaCgUFsB1t_SnhNMuodS31q7MxRn7sJO4qFBb8hHIufKfAntCOPZmoemPWeyMlZ-5es1j-MrcLTRRKoWvta1MWK7exYPm_hNmHsPJOU4XNnw3aO0NpvLog8p7W",
   },
   {
     title: "GAMERS.PH",
@@ -28,7 +25,8 @@ const projects = [
       "A gaming hub covering console, PC, and mobile titles, with reviews, news, and trailers for casual and hardcore gamers alike.",
     link: "https://gamersph.netlify.app/",
     tags: ["React", "Node.js"],
-    Icon: IconDeviceGamepad,
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuD6NGzITM3DDZdiDbl-BZo9jR0_wgZyTfN9kwouf82GXSNTi-JeoNaE85gjairE4XJA5CMftBao68EBUD9bo3ed2Xc_FONRou79oYua-w07wIX6Yj6cqBoSKyqHSI69OwB-7hcHPRwkw-BPU3su-Bq5DbhOwUsScC8SGvQud7ac4_OdDQE6gRM0BzIOLwWjaADNCeeOhx_GTF_2vj96M4VCbCdj0AUti3kBDmf7bmto5QtNKliAzvsk",
   },
 ];
 
@@ -43,17 +41,16 @@ function Projects() {
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map(({ title, description, link, tags, Icon }) => (
+        {projects.map(({ title, description, link, tags, image }) => (
           <div
             key={title}
             className="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer"
           >
-            <div className="absolute inset-0 bg-onyx-black z-0 flex items-center justify-center">
-              <Icon
-                className="project-image opacity-60 group-hover:opacity-100 transition-opacity"
-                size={120}
-                stroke={1}
-                color="#CCFF00"
+            <div className="absolute inset-0 bg-onyx-black z-0">
+              <img
+                className="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100"
+                src={image}
+                alt={`${title} project preview`}
               />
             </div>
             <div className="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
