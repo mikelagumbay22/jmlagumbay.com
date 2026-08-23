@@ -88,17 +88,11 @@ function Experience() {
 
                 <div
                   className={`md:w-[45%] pl-12 ${
-                    isReversed ? "md:pl-0 md:pr-12 md:text-right" : "md:pl-12"
+                    isReversed ? "md:pl-0 md:pr-12" : "md:pl-12"
                   }`}
                 >
                   <div className="bg-onyx-black/50 backdrop-blur-md border border-border-subtle p-6 rounded-xl hover:border-electric-lime/40 transition-colors">
-                    <ul
-                      className={`space-y-2 text-on-surface-variant font-body-md text-body-md ${
-                        isReversed
-                          ? "list-disc list-inside md:list-none"
-                          : "list-disc list-outside ml-4"
-                      }`}
-                    >
+                    <ul className="list-disc list-outside ml-4 space-y-2 text-on-surface-variant font-body-md text-body-md">
                       {item.bullets.map((bullet) => (
                         <li key={bullet}>{bullet}</li>
                       ))}
