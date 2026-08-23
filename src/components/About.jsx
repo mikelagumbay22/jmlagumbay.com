@@ -49,7 +49,9 @@ function About() {
                 Focus
               </span>
               <span className="font-body-md text-body-md text-primary">
-                Full Stack Development
+                <ul className="padding-left-10">Full Stack Development</ul>
+                <ul className="padding-left-4">Business Development</ul>
+                <ul className="padding-left-4">Artificial Intelligence</ul>
               </span>
             </div>
             <div className="bg-graphite-grey border border-border-subtle p-4 rounded-lg">
