@@ -1,77 +1,97 @@
 import {
-  Title,
-  Text,
-  Card,
-  SimpleGrid,
-  Container,
-  rem,
-} from '@mantine/core';
-import { IconDog, IconBackhoe, IconDeviceGamepad } from '@tabler/icons-react';
+  IconDog,
+  IconBackhoe,
+  IconDeviceGamepad,
+  IconArrowUpRight,
+} from "@tabler/icons-react";
 
-const mockdata = [
+const projects = [
   {
-    title: 'BUDDIE.PH',
-    link: 'https://buddie.ph/',
+    title: "BUDDIE.PH",
     description:
-      'Welcome to Buddieph – Your trusted partner in pet care. With our easy-to-use platform, you can effortlessly manage your pets health records, connect with top veterinarians, and ensure they get the best care possible—all in one place.',
-    icon: IconDog,
+      "A trusted pet care platform for managing pet health records, connecting with verified veterinarians, and booking care — all in one place.",
+    link: "https://buddie.ph/",
+    tags: ["React", "Node.js", "MongoDB"],
+    Icon: IconDog,
   },
   {
-    title: 'PARKRIDGE',
-    link: 'https://parkridgeapp-frontend.onrender.com/',
+    title: "PARKRIDGE",
     description:
-      'Parkridge App is a comprehensive community management tool designed to keep residents connected and informed. With features like announcements, facility requests, issue reporting, and construction monitoring, managing your community has never been easier.',
-    icon: IconBackhoe,
+      "A community management tool keeping residents connected through announcements, facility requests, issue reporting, and construction monitoring.",
+    link: "https://parkridgeapp-frontend.onrender.com/",
+    tags: ["React", "Node.js", "MongoDB"],
+    Icon: IconBackhoe,
   },
   {
-    title: 'GAMERS.PH',
-    link: 'https://gamersph.netlify.app/',
+    title: "GAMERS.PH",
     description:
-      'GamersPH is your ultimate gaming hub, offering a vast collection of games across all platforms—from console and PC to mobile. Discover the latest releases, explore classic titles, and stay updated with game reviews, news, and trailers. Whether you’re a casual player or a hardcore gamer, GamersPH has everything you need to elevate your gaming experience.',
-    icon: IconDeviceGamepad,
-  }
+      "A gaming hub covering console, PC, and mobile titles, with reviews, news, and trailers for casual and hardcore gamers alike.",
+    link: "https://gamersph.netlify.app/",
+    tags: ["React", "Node.js"],
+    Icon: IconDeviceGamepad,
+  },
 ];
 
 function Projects() {
-  
-  const features = mockdata.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="lg" padding="xl">
-      <feature.icon
-        style={{
-          width: rem(60),
-          height: rem(60),
-          backgroundColor: 'lime',
-          borderRadius: rem(10), // Half of the width/height for a circular effect
-        }}
-        stroke={2}
-        color="black"
-      />
-      <Text fz="lg" fw={500} mt="md">
-        <a
-          href={feature.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'black', fontSize: '2rem', textDecoration: 'underline' }}
-        >
-          {feature.title}
-        </a>
-      </Text>
-      <Text fz="sm" mt="sm">
-        {feature.description}
-      </Text>
-    </Card>
-  ));
-
   return (
-    <Container size="lg" py="xl">
-      <Title order={2} ta="center" mt="sm">
-        Projects
-      </Title>
+    <section
+      className="py-section-padding px-gutter max-w-container-max mx-auto"
+      id="projects"
+    >
+      <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-16 border-l-4 border-electric-lime pl-4">
+        Selected Works
+      </h2>
 
-      <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
-        {features}
-      </SimpleGrid>
-    </Container>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map(({ title, description, link, tags, Icon }) => (
+          <div
+            key={title}
+            className="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-onyx-black z-0 flex items-center justify-center">
+              <Icon
+                className="project-image opacity-60 group-hover:opacity-100 transition-opacity"
+                size={120}
+                stroke={1}
+                color="#CCFF00"
+              />
+            </div>
+            <div className="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+              <h3 className="font-headline-md text-headline-md text-primary">
+                {title}
+              </h3>
+            </div>
+            <div className="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+              <p className="text-on-surface-variant font-body-md text-body-md line-clamp-3">
+                {description}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {tags.map((tag, index) => (
+                  <span
+                    key={tag}
+                    className={`font-label-code text-label-code px-2 py-1 rounded ${
+                      index === 0
+                        ? "bg-electric-lime/10 text-electric-lime"
+                        : "bg-surface-variant text-on-surface"
+                    }`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a
+                className="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live <IconArrowUpRight size={16} className="ml-1" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

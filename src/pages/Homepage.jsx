@@ -1,29 +1,25 @@
 import Navigation from "../components/Navigation";
-import ProfileImage from "../components/ProfileImage";
-import Stacks from "../components/Stacks";
-import WorkExperience from "../components/WorkExperience";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import classes from "./Homepage.module.css";
+import TechStack from "../components/TechStack";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function Homepage() {
   return (
     <>
-      <div className={classes.homepagecontainer}>
-        <div id="about">
-          <Navigation />
-        </div>
-
-
-        <ProfileImage />
-
-        <Stacks />
-        <div id="resume">
-          <WorkExperience />
-        </div>
-        <div id="projects">
-          <Projects />
-        </div>
-      </div>
+      <Navigation />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <TechStack />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,52 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "electric-lime": "#CCFF00",
+        "on-surface-variant": "#c4c9ac",
+        "border-subtle": "rgba(255, 255, 255, 0.1)",
+        "graphite-grey": "#121212",
+        background: "#121414",
+        primary: "#ffffff",
+        "surface-variant": "#333535",
+        "on-surface": "#e2e2e2",
+        "onyx-black": "#000000",
+        "glass-overlay": "rgba(255, 255, 255, 0.03)",
+      },
+      spacing: {
+        gutter: "32px",
+        "container-max": "1280px",
+        "section-padding": "120px",
+        "stack-sm": "8px",
+        "stack-md": "16px",
+        "stack-lg": "32px",
+      },
+      fontFamily: {
+        "body-md": ["Inter", "sans-serif"],
+        "display-lg-mobile": ["Montserrat", "sans-serif"],
+        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+        "headline-lg": ["Montserrat", "sans-serif"],
+        "label-code": ["JetBrains Mono", "monospace"],
+        "display-lg": ["Montserrat", "sans-serif"],
+        "body-lg": ["Inter", "sans-serif"],
+        "label-caps": ["Montserrat", "sans-serif"],
+        "headline-md": ["Montserrat", "sans-serif"],
+      },
+      fontSize: {
+        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+        "display-lg-mobile": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "headline-lg-mobile": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+        "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "700" }],
+        "label-code": ["14px", { lineHeight: "1.5", letterSpacing: "0.05em", fontWeight: "500" }],
+        "display-lg": ["80px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+        "headline-md": ["32px", { lineHeight: "1.4", fontWeight: "600" }],
+      },
+    },
+  },
+  plugins: [],
+};

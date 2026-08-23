@@ -1,68 +1,90 @@
-import { useState } from 'react';
-import { Container, Group, Burger, Image, Drawer, ScrollArea } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import JmLogo from '../assets/JmlLogo.png';
-import classes from './Navigation.module.css';
+import { useState } from "react";
+import JmLogo from "../assets/JmlLogo.png";
+import { RESUME_URL } from "../constants";
 
 const links = [
-  { link: '#about', label: 'About' },
-  { link: '#resume', label: 'Work Experience' },
-  { link: '#projects', label: 'Projects' },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
 ];
 
 function Navigation() {
-  const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
-
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={classes.link}
-      data-active={active === link.link || undefined}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-
-        const section = document.querySelector(link.link);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        close(); 
-      }}
-    >
-      {link.label}
-    </a>
-  ));
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
-        <Image src={JmLogo} alt="JM Lagumbay" className={classes.logo} />
-        <Group className={classes.linksGroup} gap={5}>
-          {items}
-        </Group>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size="sm"
-        />
-      </Container>
+    <header className="fixed top-0 w-full z-50 bg-onyx-black/80 backdrop-blur-md border-b border-border-subtle">
+      <nav className="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+        <a
+          className="flex items-center gap-3 active:scale-95 transition-transform group"
+          href="#"
+        >
+          <img
+            alt="JM Lagumbay Logo"
+            className="h-10 w-10 object-contain rounded-full border border-border-subtle group-hover:border-electric-lime transition-colors bg-onyx-black"
+            src={JmLogo}
+          />
+          <span className="font-headline-md text-headline-md font-bold text-electric-lime tracking-tighter">
+            JM LAGUMBAY
+          </span>
+        </a>
 
+        <ul className="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+          {links.map((link) => (
+            <li key={link.href}>
+              <a
+                className="text-on-surface-variant hover:text-electric-lime transition-all duration-300"
+                href={link.href}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <Drawer
-        opened={opened}
-        onClose={close}
-      
-        size="100%"
-        className={classes.drawer}
-      >
-        <ScrollArea style={{ height: '100vh', width:'100%', backgroundColor: 'white' } }>
-          <div className={classes.mobileLinks}>{items}</div>
-        </ScrollArea>
-      </Drawer>
+        <a
+          className="hidden md:inline-flex items-center justify-center font-label-caps text-label-caps bg-transparent border border-primary text-primary px-6 py-2 rounded-full hover:bg-primary hover:text-onyx-black transition-all duration-300 active:scale-95"
+          href={RESUME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </a>
+
+        <button
+          aria-label="Toggle menu"
+          className="md:hidden text-primary p-2"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <span className="material-symbols-outlined">
+            {open ? "close" : "menu"}
+          </span>
+        </button>
+      </nav>
+
+      {open && (
+        <div className="md:hidden bg-onyx-black border-t border-border-subtle px-gutter py-stack-md flex flex-col gap-4">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              className="text-on-surface-variant hover:text-electric-lime transition-colors font-label-caps text-label-caps"
+              href={link.href}
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            className="inline-flex items-center justify-center font-label-caps text-label-caps bg-electric-lime text-onyx-black px-6 py-3 rounded-full font-bold"
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            Resume
+          </a>
+        </div>
+      )}
     </header>
   );
 }
