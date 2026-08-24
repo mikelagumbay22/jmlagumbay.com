@@ -1,0 +1,610 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>JM Lagumbay - Full Stack Web Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "electric-lime": "#CCFF00",
+                        "on-primary": "#283500",
+                        "on-background": "#e2e2e2",
+                        "on-primary-container": "#556d00",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#c6c6c6",
+                        "secondary-container": "#474747",
+                        "primary-container": "#c3f400",
+                        "surface-container-lowest": "#0c0f0f",
+                        "outline": "#8e9379",
+                        "inverse-primary": "#506600",
+                        "on-secondary": "#303030",
+                        "surface-variant": "#333535",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface-variant": "#c4c9ac",
+                        "glass-overlay": "rgba(255, 255, 255, 0.03)",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#656464",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "border-subtle": "rgba(255, 255, 255, 0.1)",
+                        "surface-container-highest": "#333535",
+                        "on-secondary-fixed-variant": "#474747",
+                        "error": "#ffb4ab",
+                        "graphite-grey": "#121212",
+                        "surface-tint": "#abd600",
+                        "background": "#121414",
+                        "primary": "#ffffff",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-container": "#e5e2e1",
+                        "surface-container": "#1e2020",
+                        "on-tertiary": "#313030",
+                        "surface-dim": "#121414",
+                        "surface-container-low": "#1a1c1c",
+                        "primary-fixed-dim": "#abd600",
+                        "outline-variant": "#444933",
+                        "tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "primary-fixed": "#c3f400",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#282a2b",
+                        "on-error": "#690005",
+                        "onyx-black": "#000000",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "surface": "#121414",
+                        "on-secondary-container": "#b5b5b5",
+                        "surface-bright": "#37393a",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#161e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "section-padding": "120px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Montserrat", "sans-serif"],
+                        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+                        "headline-lg": ["Montserrat", "sans-serif"],
+                        "label-code": ["JetBrains Mono", "monospace"],
+                        "display-lg": ["Montserrat", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "label-caps": ["Montserrat", "sans-serif"],
+                        "headline-md": ["Montserrat", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-code": ["14px", { "lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+        }
+        .project-card:hover .project-image {
+            filter: grayscale(0%);
+        }
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        .project-image {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        .project-overlay {
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333535; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #CCFF00; 
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-electric-lime selection:text-onyx-black">
+<!-- TopNavBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 bg-onyx-black/80 backdrop-blur-md border-b border-border-subtle">
+<nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a class="flex items-center gap-3 active:scale-95 transition-transform group" href="#">
+<img alt="JM Lagumbay Logo" class="h-10 w-10 object-contain rounded-full border border-border-subtle group-hover:border-electric-lime transition-colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiEBW_-3T00De9h3GzQlhdvSM-bl__PAIS3KUfeygrYzt7NtSI6b962wvM4zIPe-oybGX3V147hQh_FDjXlmZ4HGE7JOd38Nv0FXjrm_DKWB6DiwwexiApnI_F3aP0H9-OOpYu5K1K2rQdXexNH-_SN7uNaBhLffDVsc1NBO9c0gPKcWJ_9d1o3qrYv36A0OOON1PMG5M0uplSIJdLtLhF64CASiT_oR-Pr7OP2aAxxiJ3qCzpBuWgI8J3GfJwigPyLQ">
+<span class="font-headline-md text-headline-md font-bold text-electric-lime tracking-tighter">DEV_MASTERY</span>
+</a>
+<ul class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-all duration-300" href="#about">About</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-all duration-300" href="#experience">Experience</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-all duration-300" href="#projects">Projects</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-all duration-300" href="#contact">Contact</a></li>
+</ul>
+<a class="hidden md:inline-flex items-center justify-center font-label-caps text-label-caps bg-transparent border border-primary text-primary px-6 py-2 rounded-full hover:bg-primary hover:text-onyx-black transition-all duration-300 active:scale-95" href="#experience">
+                Resume
+            </a>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center pt-20 px-gutter max-w-container-max mx-auto relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-lime rounded-full blur-[150px]"></div>
+</div>
+<div class="relative z-10 text-center space-y-stack-lg max-w-3xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">
+                    JM <span class="text-electric-lime">LAGUMBAY</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant">
+                    Full Stack Web Developer
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-stack-md pt-stack-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center font-label-caps text-label-caps bg-electric-lime text-onyx-black px-8 py-4 rounded-full glow-effect transition-all duration-300 active:scale-95 font-bold" href="#experience">
+                        View Experience
+                    </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center font-label-caps text-label-caps bg-transparent border border-border-subtle text-primary px-8 py-4 rounded-full hover:border-primary hover:bg-glass-overlay transition-all duration-300 active:scale-95" href="#">
+                        Download Resume
+                    </a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="about">
+<div class="grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 relative">
+<div class="aspect-square rounded-2xl overflow-hidden bg-graphite-grey border border-border-subtle relative p-4">
+<div class="absolute inset-0 bg-gradient-to-tr from-electric-lime/10 to-transparent pointer-events-none"></div>
+<img class="w-full h-full object-cover rounded-xl filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500" alt="JM Lagumbay Profile Portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkwi3FiVfSQtoSL5JCDC5tZhxjoXE-c-Msoikumy1TO8MgQkhW-C-thBbvjW0wxmc1hy8gtWUTbnj_Lz36g_Gpp163klr4lBe0Ou0sJEA1pDnyr7rqYXgCRI_dcJh8WcLiwUig-twovF2ogubcel1DJX8O8i3_SPop1-099IRqM1NrT9h0agWI3OLudCkCXt5iZqCoCxPjhVgu7rdIvLNru_DCAS5ohNoJvuPjMyUz_74jepE97Er8tVxT4iLIqr4b0w">
+</div>
+</div>
+<div class="md:col-span-7 space-y-stack-lg pl-0 md:pl-gutter">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary border-l-4 border-electric-lime pl-4">
+                        Driven by Build.
+                    </h2>
+<div class="space-y-stack-md text-on-surface-variant font-body-lg text-body-lg">
+<p class="">
+                            Transitioning from a solid foundation in customer experience at leading tech companies, I've pivoted my career to where my true passion lies: building robust, scalable web applications.
+                        </p>
+<p class="">
+                            My journey isn't traditional, and that's my strength. It instilled in me a profound understanding of user friction, which I now translate into seamless digital experiences. I don't just write code; I engineer solutions focused on user empathy and technical excellence.
+                        </p>
+</div>
+<div class="pt-stack-sm flex gap-4">
+<div class="bg-graphite-grey border border-border-subtle p-4 rounded-lg">
+<span class="block font-label-code text-label-code text-electric-lime mb-1">Status</span>
+<span class="font-body-md text-body-md text-primary">Open to Opportunities</span>
+</div>
+<div class="bg-graphite-grey border border-border-subtle p-4 rounded-lg">
+<span class="block font-label-code text-label-code text-electric-lime mb-1">Focus</span>
+<span class="font-body-md text-body-md text-primary">Full Stack / Frontend</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section-padding px-gutter bg-graphite-grey border-y border-border-subtle" id="experience">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-16 text-center">
+                    Career Journey
+                </h2>
+<div class="relative max-w-4xl mx-auto pl-8 md:pl-0">
+<!-- Vertical Line -->
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border-subtle -translate-x-1/2"></div>
+<!-- Experience Item 1 -->
+<div class="relative mb-20 md:flex md:justify-between md:items-center group">
+<!-- Timeline Node -->
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-onyx-black border-2 border-electric-lime -translate-x-1/2 z-10 group-hover:shadow-[0_0_15px_rgba(204,255,0,0.5)] transition-shadow"></div>
+<!-- Content Left (or full width on mobile) -->
+<div class="md:w-[45%] md:text-right pr-0 md:pr-12 pl-12 md:pl-0 mb-4 md:mb-0">
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-electric-lime transition-colors">Tesla</h3>
+<div class="inline-block mt-2 px-3 py-1 bg-electric-lime/10 text-electric-lime font-label-caps text-label-caps rounded-full border border-electric-lime/20">
+                                US Market Focus
+                            </div>
+<p class="mt-2 text-on-surface-variant font-body-md text-body-md">Energy Customer Support Specialist</p>
+</div>
+<!-- Content Right -->
+<div class="md:w-[45%] pl-12 md:pl-12">
+<div class="bg-onyx-black/50 backdrop-blur-md border border-border-subtle p-6 rounded-xl hover:border-border-subtle/50 transition-colors">
+<ul class="list-disc list-outside ml-4 space-y-2 text-on-surface-variant font-body-md text-body-md">
+<li class="">Delivered premium support for complex energy ecosystems.</li>
+<li class="">Mastered technical troubleshooting protocols for Solar and Powerwall systems.</li>
+<li class="">Maintained high customer satisfaction in a fast-paced, high-stakes environment.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative md:flex md:justify-between md:items-center md:flex-row-reverse group">
+<!-- Timeline Node -->
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-onyx-black border-2 border-surface-variant -translate-x-1/2 z-10 group-hover:border-electric-lime group-hover:shadow-[0_0_15px_rgba(204,255,0,0.5)] transition-all"></div>
+<!-- Content Right (or full width on mobile) -->
+<div class="md:w-[45%] pl-12 md:pl-0 md:pr-12 mb-4 md:mb-0">
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-electric-lime transition-colors">Sykes</h3>
+<div class="inline-block mt-2 px-3 py-1 bg-surface-variant text-on-surface font-label-caps text-label-caps rounded-full">
+                                Philippines
+                            </div>
+<p class="mt-2 text-on-surface-variant font-body-md text-body-md">Customer Service Representative</p>
+</div>
+<!-- Content Left -->
+<div class="md:w-[45%] pl-12 md:pl-0 md:pr-12 md:text-right">
+<div class="bg-onyx-black/50 backdrop-blur-md border border-border-subtle p-6 rounded-xl hover:border-border-subtle/50 transition-colors text-left md:text-right">
+<ul class="list-disc list-inside md:list-none space-y-2 text-on-surface-variant font-body-md text-body-md">
+<li class="">Handled high-volume inquiries with precision and empathy.</li>
+<li class="">Developed strong communication and de-escalation skills.</li>
+<li class="">Consistently met and exceeded quality assurance metrics.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="projects">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-16 border-l-4 border-electric-lime pl-4">
+                Selected Works
+            </h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer">
+<div class="absolute inset-0 bg-onyx-black z-0">
+<img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" data-alt="A modern web interface displayed on a sleek laptop screen, set against a dark, minimalist background. The interface shows a pet adoption or dog walking platform named BUDDIE.PH with clean UI elements and subtle neon green accents. Soft ambient lighting highlights the edges of the device, creating a premium tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMkmZq4RaOGMREQEhJ6OaB5UERhuiyascdtQIbfcjxLgEHBH7Ge9AzXXuRtjs5-KDYSXJ0Qt6DUU_PKG53aebfiGl60FAQsoBLqAeuKQsH-zFcN8zZlFlOUZwW2P30sEBcmfjYorSwlJA07hLgxpz9sGvRf1dRV_wQ4VVoUpQ-PefA8T2iuQKC3pyA1zYcg5rTGCV_KhzTHhNkquvoqAD0YHkHJFt_Tyaa2hPTfIOpwvCmVb7HzrJZ">
+</div>
+<div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+<h3 class="font-headline-md text-headline-md text-primary">BUDDIE.PH</h3>
+</div>
+<div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+<p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+                            A comprehensive pet services platform connecting owners with verified walkers and sitters.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">React</span>
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Node.js</span>
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">MongoDB</span>
+</div>
+<a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="#">
+                            View Live <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer">
+<div class="absolute inset-0 bg-onyx-black z-0">
+<img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" data-alt="A sophisticated real estate dashboard displayed on a high-resolution monitor in a dark studio setting. The screen shows architectural floor plans and property listings for PARKRIDGE. The lighting is moody and cinematic, with sharp contrasts and subtle geometric reflections on the glass screen, emphasizing a high-end, professional build." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbXO39XxY4pPz2KvuG1qKJSD5KTG711UMTspT3SRCKyAsLhfnYqlmtSvumc2Os2rFE0I7L3Lojyr_xWewTnT-fe18-sm3CHPyXewSr50VZaFMsEfSnoykDuB7ozaBaCgUFsB1t_SnhNMuodS31q7MxRn7sJO4qFBb8hHIufKfAntCOPZmoemPWeyMlZ-5es1j-MrcLTRRKoWvta1MWK7exYPm_hNmHsPJOU4XNnw3aO0NpvLog8p7W">
+</div>
+<div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+<h3 class="font-headline-md text-headline-md text-primary">PARKRIDGE</h3>
+</div>
+<div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+<p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+                            Premium real estate showcase featuring immersive property tours and dynamic availability filtering.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">Next.js</span>
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Tailwind</span>
+</div>
+<a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="#">
+                            View Live <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer lg:col-span-1">
+<div class="absolute inset-0 bg-onyx-black z-0">
+<img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" data-alt="A dark-themed e-commerce interface for a gaming gear store called GAMERS.PH displayed on a glowing tablet device. The screen shows sleek product cards for mechanical keyboards and headsets. The surrounding environment is pitch black, illuminated only by the sharp, crisp light emitting from the tablet screen, creating an intense, futuristic vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6NGzITM3DDZdiDbl-BZo9jR0_wgZyTfN9kwouf82GXSNTi-JeoNaE85gjairE4XJA5CMftBao68EBUD9bo3ed2Xc_FONRou79oYua-w07wIX6Yj6cqBoSKyqHSI69OwB-7hcHPRwkw-BPU3su-Bq5DbhOwUsScC8SGvQud7ac4_OdDQE6gRM0BzIOLwWjaADNCeeOhx_GTF_2vj96M4VCbCdj0AUti3kBDmf7bmto5QtNKliAzvsk">
+</div>
+<div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+<h3 class="font-headline-md text-headline-md text-primary">GAMERS.PH</h3>
+</div>
+<div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+<p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+                            High-performance e-commerce storefront optimized for gaming peripherals with secure checkout.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">Vue</span>
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Express</span>
+</div>
+<a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="#">
+                            View Live <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer"><div class="absolute inset-0 bg-onyx-black z-0">
+    <img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" alt="Battle Tank Game Screenshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlFW8eGfjQu52CawmyaQbbKC-GlZPru2BdLncAlntdhHYKcHhjCKrh5HsgThaOI6RoXO6MecwZlb_LR86ZAILbtw7_RXYlsV9F20qakZiuXs8DRzETUCq64b4XEdFIXlpgp-jNwvMBI_7nwYiOextJKS5visOh8OAuzdjS49uHYmYlo7Us_0mGbzaSq4Mt8LtlnHoEmP0wq_OfU4C7IbtTmSvk2EhCE7BfAiiPSgTWbc6gjPWGUrf0">
+</div>
+<div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+    <h3 class="font-headline-md text-headline-md text-primary">Battle Tank</h3>
+</div>
+<div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+    <p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+        A retro-inspired arcade shooter built with high-performance logic. Maneuver through desert terrain, destroy enemy shapes, and survive multiple levels of increasing difficulty.
+    </p>
+    <div class="flex flex-wrap gap-2 mt-4">
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">C++</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Game Dev</span>
+    </div>
+    <div class="flex items-center justify-between mt-4">
+        <a class="inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="https://github.com/mikelagumbay22/Battle-Tank/releases/latest">
+            Play Now <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+        </a>
+        <a class="inline-flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-electric-lime transition-colors" href="https://github.com/mikelagumbay22/Battle-Tank">
+            View Code <span class="material-symbols-outlined ml-1" data-icon="code">code</span>
+        </a>
+    </div>
+</div></div>
+<!-- Project 5 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer">
+    <div class="absolute inset-0 bg-onyx-black z-0"><img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" alt="Agent Data API Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLMqv-AHGQUu4n6-iLj4JcDCGkk0AADDEkOGYW8zQEbdECwvEg7tS33foReUaAaeraq6yUTxxRfy3FebluZhGsL4kmcx_OB647Jkipf1shFg3OD8rvdUzrOzO4tzeqCRFVeDdQRpICXCNuS5FrcuUNMZG_rTFARtqwmd-3ikRSuaYBBka3-Glv_inEOtpGZz4fiV5TYigMV2DqjUC2AJgnWAs8TL_Q2FC_wnR1GPHsbr69RhDD7dS3"></div>
+    <div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+        <h3 class="font-headline-md text-headline-md text-primary">Agent Data API</h3>
+    </div>
+    <div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+        <p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">A Spring Boot REST API for managing agent records. Full CRUD with Spring Data JPA and Hibernate over an H2 database, documented with an interactive OpenAPI/Swagger interface.</p>
+        <div class="flex flex-wrap gap-2 mt-4"><span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">Java</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Spring Boot</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">REST API</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Hibernate</span></div>
+        <a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="https://createapiusingspringboot.onrender.com/">View Project <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span></a>
+    </div>
+</div>
+<!-- Project 6 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer"><div class="absolute inset-0 bg-onyx-black z-0">
+    <img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" alt="Agents and Missions Project Preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ZNVCF3HpsNktDdAeemfOHs6F2i2NXX9JGOFv7X9L8cRhKxuclki-lR21tZe2bhFBcBrYt4pz6saAwrxUH4BUkInrTVaV0bg4ojQLELTJpTAUJP3_nOrMzKe62VFcVzcWGci6Ea56djZEKBXkBaAgNkjN85OZcvJhc6Y2ieY_TeX6VyTT3YhJN0L8a3izs1wpXirxssYd-uKcZyz3CH5s40VbaMO1mN4U35SjhjklLlswOCbPqlPy">
+</div>
+<div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+    <h3 class="font-headline-md text-headline-md text-primary">Agents and Missions</h3>
+</div>
+<div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+    <p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+        A full-stack Java web application built with Spring Boot 4 and Thymeleaf. Agents and missions are modelled as a bidirectional many-to-many relationship through Spring Data JPA and Hibernate, so each agent's page lists their missions and each mission's page lists its assigned agents. The UI is server-rendered with Thymeleaf fragments for shared header and footer layout, styled with Bootstrap 5 alongside custom CSS, and includes agent creation forms and dedicated detail views. Sample data is seeded at startup by a DataInitializer component.
+    </p>
+    <div class="flex flex-wrap gap-2 mt-4">
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Java</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Spring Boot</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Thymeleaf</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">JPA/Hibernate</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Bootstrap</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Full-Stack</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Gradle</span>
+    </div>
+    <a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="https://agents-missions-springboot.onrender.com">
+        View Project <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+    </a>
+</div></div>
+<!-- Project 7 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer">
+    <div class="absolute inset-0 bg-onyx-black z-0">
+        <img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" alt="Handwritten Digit Recognition Project Preview" src="https://lh3.googleusercontent.com/aida/AEtjO1UyQybPxXEPSG8YTs5Phpe565pZ4TJaq0EG58MiATYebvR0AnSrK9R5IV12SOWCylz3I9Gao_NvpX_OfRM1CgZcbfoYHOIYlC53cWsd28czDXLnnowOY2nty9-hwmRI5T9LFYKaoeE1KfhdXtyEqawt-ev4zr6C6qnHYQ16rPaVC2zcUMuNnRscrqCbsd61CMUEE5jHTB-ts8AA6PkXW03JT0XuPTp8meL0kAohMao_K7rVNjroB9JIFQ">
+    </div>
+    <div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+        <h3 class="font-headline-md text-headline-md text-primary">CNN Image Classification</h3>
+    </div>
+    <div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+        <p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">Two convolutional neural networks built with TensorFlow/Keras, applying the same architecture to handwritten digit recognition and clothing classification. Custom images are preprocessed with OpenCV and run through the trained models.</p>
+        <div class="flex flex-wrap gap-2 mt-4"><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Python</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">TensorFlow/Keras</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">CNN</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">OpenCV</span><span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">scikit-learn</span></div>
+        <div class="flex items-center justify-between mt-4">
+            <a class="inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="https://github.com/mikelagumbay22/cnn-image-classification">
+                View Notebook <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+            </a>
+            <a class="inline-flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-electric-lime transition-colors" href="#">
+                Run in Colab <span class="material-symbols-outlined ml-1" data-icon="play_circle">play_circle</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Project 8 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer">
+    <div class="absolute inset-0 bg-onyx-black z-0">
+        <img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" alt="News Headline Classifier API Project Preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw_YxsnBYMPwy17d-WU_5GEzNtBOSv6dlM556fbiyL0xxl5SBhvHyCetzR-xFR1lql-FWkXIHfR62fe_Yex1s-7QSsIsRB4DaRw5AptIonrUsUE1VFNJ1qtSpZH67kxXSh-HLG5L2ecKtISrR8TOL_q180ekLHeQKL4uBLqb9RkgixyMwYtpqFhi6tC1880O1mdNuzA2OriqoitP9QUnaxjNdNv7_SPt4KrFT2rfMEAr3fKv9Opnhy">
+    </div>
+    <div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+        <h3 class="font-headline-md text-headline-md text-primary">News Headline Classifier API</h3>
+    </div>
+    <div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+        <p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+            A machine learning model deployed as a live web service. A Naive Bayes classifier trained on 47,590 news headlines predicts which of 41 news sections a headline belongs to.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+            <span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">Python</span>
+            <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">scikit-learn</span>
+            <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">NLP</span>
+            <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Flask</span>
+            <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Docker</span>
+        </div>
+        <a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="#">
+            View Project <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+        </a>
+    </div>
+</div>
+<!-- Project 9 -->
+<div class="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer"><div class="absolute inset-0 bg-onyx-black z-0">
+    <img class="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100" alt="K-Means Image Compression Project Preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCLMswisSrmh8HKIR-Kb7DbuqhriV_fL7SAh6MMP65I7osZDwq9D5brMk9Dk0E37RKlO_DyZ-jvIbfmAKMe7tg_DZ49TIek2u02MJUDqeXV2xXXKwGuldrDM-tEZdyXz6Z-MKRuJKUtLKK2LSp1LkMRD1AFfoN4kMeq791DjmbQC9fcO8jvZ5kThGH6DsUC2LlHpOcAs4xjpZBxr6-2vJ1kI5P9-5PpOvTx3QJt0bVU7wd19ynb5-U">
+</div>
+<div class="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
+    <h3 class="font-headline-md text-headline-md text-primary">K-Means Image Compression</h3>
+</div>
+<div class="absolute bottom-0 w-full p-6 bg-onyx-black/80 backdrop-blur-md project-overlay z-20 border-t border-border-subtle flex flex-col justify-between h-1/2">
+    <p class="text-on-surface-variant font-body-md text-body-md line-clamp-2">
+        Unsupervised learning applied to images: every pixel is clustered as a point in RGB colour space, then rewritten as its cluster centre to rebuild the image from a reduced palette. Interactive web app built with scikit-learn and Flask, deployed with Docker.
+    </p>
+    <div class="flex flex-wrap gap-2 mt-4">
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-electric-lime/10 text-electric-lime">Python</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">scikit-learn</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Unsupervised Learning</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">NumPy</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Flask</span>
+        <span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-variant text-on-surface">Docker</span>
+    </div>
+    <a class="mt-4 inline-flex items-center text-electric-lime font-label-caps text-label-caps hover:text-primary transition-colors" href="#">
+        View Project <span class="material-symbols-outlined ml-1" data-icon="arrow_outward">arrow_outward</span>
+    </a>
+</div></div></div>
+</section>
+<!-- Tech Stack Section -->
+<section class="py-section-padding px-gutter bg-graphite-grey border-y border-border-subtle">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-12 tracking-widest uppercase">
+                    Core Technologies
+                </h2>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code">
+                        JavaScript
+                    </div>
+<div class="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code">
+                        React
+                    </div>
+<div class="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code">
+                        Node.js
+                    </div>
+<div class="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code">
+                        Express
+                    </div>
+<div class="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code">
+                        MongoDB
+                    </div>
+<div class="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code">
+                        Tailwind CSS
+                    </div>
+</div>
+</div>
+</section>
+<!-- Contact Section (Pre-Footer) -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="contact">
+<div class="grid md:grid-cols-2 gap-gutter items-start">
+<div class="space-y-stack-lg">
+<div class="space-y-4">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">
+          Get In <span class="text-electric-lime">Touch</span>
+</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-md">
+          Have a project in mind or just want to say hi? Feel free to reach out! I'm currently open for new opportunities and collaborations.
+        </p>
+</div>
+<div class="space-y-6 pt-8">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-electric-lime/10 flex items-center justify-center text-electric-lime border border-electric-lime/20 group-hover:bg-electric-lime group-hover:text-onyx-black transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Email</p>
+<a class="text-body-lg font-body-lg text-primary hover:text-electric-lime transition-colors" href="mailto:hello@jmlagumbay.dev">hello@jmlagumbay.dev</a>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-electric-lime/10 flex items-center justify-center text-electric-lime border border-electric-lime/20 group-hover:bg-electric-lime group-hover:text-onyx-black transition-all">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Location</p>
+<p class="text-body-lg font-body-lg text-primary">US/Canada Remote</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-graphite-grey border border-border-subtle p-8 rounded-2xl">
+<form class="space-y-6" onsubmit="return false;">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="name">Name</label>
+<input class="w-full bg-onyx-black border border-border-subtle rounded-lg px-4 py-3 text-primary focus:outline-none focus:ring-1 focus:ring-electric-lime focus:border-electric-lime transition-all placeholder:opacity-30" id="name" name="name" placeholder="Your Name" type="text">
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="email">Email</label>
+<input class="w-full bg-onyx-black border border-border-subtle rounded-lg px-4 py-3 text-primary focus:outline-none focus:ring-1 focus:ring-electric-lime focus:border-electric-lime transition-all placeholder:opacity-30" id="email" name="email" placeholder="your@email.com" type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="subject">Subject</label>
+<input class="w-full bg-onyx-black border border-border-subtle rounded-lg px-4 py-3 text-primary focus:outline-none focus:ring-1 focus:ring-electric-lime focus:border-electric-lime transition-all placeholder:opacity-30" id="subject" name="subject" placeholder="Project Inquiry" type="text">
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="message">Message</label>
+<textarea class="w-full bg-onyx-black border border-border-subtle rounded-lg px-4 py-3 text-primary focus:outline-none focus:ring-1 focus:ring-electric-lime focus:border-electric-lime transition-all placeholder:opacity-30 resize-none" id="message" name="message" placeholder="Tell me about your project..." rows="4"></textarea>
+</div>
+<button class="w-full inline-flex items-center justify-center font-label-caps text-label-caps bg-electric-lime text-onyx-black px-8 py-4 rounded-full glow-effect transition-all duration-300 active:scale-95 font-bold" type="submit">
+          Send Message
+        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<footer class="w-full bg-onyx-black border-t border-border-subtle flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-gutter max-w-container-max mx-auto">
+<div class="font-label-caps text-label-caps text-on-surface mb-4 md:mb-0">
+                DEV_MASTERY
+            </div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 md:mb-0 text-center">
+                © 2024 Developer Portfolio. Engineered for Performance.
+            </p>
+<ul class="flex gap-6 font-body-md text-body-md">
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-colors focus:outline-none focus:ring-1 focus:ring-electric-lime rounded" href="#">LinkedIn</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-colors focus:outline-none focus:ring-1 focus:ring-electric-lime rounded" href="#">GitHub</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-electric-lime transition-colors focus:outline-none focus:ring-1 focus:ring-electric-lime rounded" href="#">Email</a></li>
+</ul>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

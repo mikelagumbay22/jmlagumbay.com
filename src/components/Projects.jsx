@@ -89,9 +89,7 @@ const projects = [
       "Two convolutional neural networks built with TensorFlow/Keras, applying the same architecture to handwritten digit recognition and clothing classification. Custom images are preprocessed with OpenCV and run through the trained models.",
     tags: ["Python", "TensorFlow/Keras", "CNN", "OpenCV", "scikit-learn"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAw_YxsnBYMPwy17d-WU_5GEzNtBOSv6dlM556fbiyL0xxl5SBhvHyCetzR-xFR1lql-FWkXIHfR62fe_Yex1s-7QSsIsRB4DaRw5AptIonrUsUE1VFNJ1qtSpZH67kxXSh-HLG5L2ecKtISrR8TOL_q180ekLHeQKL4uBLqb9RkgixyMwYtpqFhi6tC1880O1mdNuzA2OriqoitP9QUnaxjNdNv7_SPt4KrFT2rfMEAr3fKv9Opnhy",
-    // image:
-    //   "https://lh3.googleusercontent.com/aida/AEtjO1UyQybPxXEPSG8YTs5Phpe565pZ4TJaq0EG58MiATYebvR0AnSrK9R5IV12SOWCylz3I9Gao_NvpX_OfRM1CgZcbfoYHOIYlC53cWsd28czDXLnnowOY2nty9-hwmRI5T9LFYKaoeE1KfhdXtyEqawt-ev4zr6C6qnHYQ16rPaVC2zcUMuNnRscrqCbsd61CMUEE5jHTB-ts8AA6PkXW03JT0XuPTp8meL0kAohMao_K7rVNjroB9JIFQ",
+      "https://lh3.googleusercontent.com/aida/AEtjO1UyQybPxXEPSG8YTs5Phpe565pZ4TJaq0EG58MiATYebvR0AnSrK9R5IV12SOWCylz3I9Gao_NvpX_OfRM1CgZcbfoYHOIYlC53cWsd28czDXLnnowOY2nty9-hwmRI5T9LFYKaoeE1KfhdXtyEqawt-ev4zr6C6qnHYQ16rPaVC2zcUMuNnRscrqCbsd61CMUEE5jHTB-ts8AA6PkXW03JT0XuPTp8meL0kAohMao_K7rVNjroB9JIFQ",
     links: [
       {
         label: "View Notebook",
