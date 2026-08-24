@@ -31,7 +31,7 @@ const timeline = [
   },
 ];
 
-function Experience() {
+export default function Experience() {
   return (
     <section
       className="py-section-padding px-gutter bg-graphite-grey border-y border-border-subtle"
@@ -108,4 +108,4 @@ function Experience() {
   );
 }
 
-export default Experience;
+

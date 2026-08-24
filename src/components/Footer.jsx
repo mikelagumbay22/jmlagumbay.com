@@ -1,6 +1,6 @@
 import { EMAIL, LINKEDIN_URL, GITHUB_URL } from "../constants";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="w-full bg-onyx-black border-t border-border-subtle">
       <div className="flex flex-col md:flex-row justify-between items-center py-stack-lg px-gutter max-w-container-max mx-auto">
@@ -45,4 +45,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+

@@ -1,6 +1,6 @@
 import ProfilePic from "../assets/ProfilePic.png";
 
-function About() {
+export default function About() {
   return (
     <section className="py-section-padding px-gutter max-w-container-max mx-auto" id="about">
       <div className="grid md:grid-cols-12 gap-gutter items-center">
@@ -71,4 +71,4 @@ function About() {
   );
 }
 
-export default About;
+

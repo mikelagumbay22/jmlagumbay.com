@@ -9,7 +9,7 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-function Navigation() {
+export default function Navigation() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -89,4 +89,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+

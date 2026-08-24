@@ -130,7 +130,7 @@ const projects = [
   },
 ];
 
-function Projects() {
+export default function Projects() {
   return (
     <section
       className="py-section-padding px-gutter max-w-container-max mx-auto"
@@ -203,4 +203,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+

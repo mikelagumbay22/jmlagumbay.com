@@ -15,6 +15,8 @@ module.exports = {
         "on-surface": "#e2e2e2",
         "onyx-black": "#000000",
         "glass-overlay": "rgba(255, 255, 255, 0.03)",
+        "surface-container-low": "#1a1c1c",
+        "surface-container-high": "#282a2b",
       },
       spacing: {
         gutter: "32px",

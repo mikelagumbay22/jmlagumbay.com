@@ -1,6 +1,6 @@
 import { RESUME_URL } from "../constants";
 
-function Hero() {
+export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 px-gutter max-w-container-max mx-auto relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -34,4 +34,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+

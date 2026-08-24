@@ -1,29 +1,73 @@
-const stack = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "HTML5",
-  "Git/GitHub",
-  "Tailwind CSS",
+const techGroups = [
+  {
+    name: "Languages",
+    items: [
+      "JavaScript",
+      "TypeScript",
+      "Java",
+      "Python",
+      "C#",
+      "SQL",
+      "HTML5",
+      "CSS3",
+    ],
+  },
+  {
+    name: "Frontend",
+    items: ["React", "Tailwind CSS", "Bootstrap", "Thymeleaf"],
+  },
+  {
+    name: "Backend",
+    items: ["Node.js", "Express", "Spring Boot", "Flask", "REST APIs"],
+  },
+  {
+    name: "Data & ML",
+    items: ["scikit-learn", "TensorFlow/Keras", "pandas", "NumPy"],
+  },
+  {
+    name: "Databases",
+    items: ["MongoDB", "PostgreSQL", "H2", "Entity Framework"],
+  },
+  {
+    name: "Tools",
+    items: [
+      "Git/GitHub",
+      "Docker",
+      "Render",
+      "Maven/Gradle",
+      "IntelliJ IDEA",
+      "Visual Studio",
+    ],
+  },
 ];
 
-function TechStack() {
+export default function TechStack() {
   return (
     <section className="py-section-padding px-gutter bg-graphite-grey border-y border-border-subtle">
-      <div className="max-w-container-max mx-auto text-center">
-        <h2 className="font-label-caps text-label-caps text-on-surface-variant mb-12 tracking-widest uppercase">
+      <div className="max-w-container-max mx-auto">
+        <h2 className="font-label-caps text-label-caps text-on-surface-variant mb-12 tracking-widest uppercase text-center">
           Core Technologies
         </h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          {stack.map((tech) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {techGroups.map((group) => (
             <div
-              key={tech}
-              className="px-6 py-3 border border-border-subtle rounded-full bg-onyx-black/50 backdrop-blur-md hover:border-electric-lime hover:text-electric-lime transition-colors flex items-center gap-2 text-primary font-label-code text-label-code"
+              key={group.name}
+              className="bg-surface-container-low border border-border-subtle rounded-lg p-6"
             >
-              {tech}
+              <h3 className="text-electric-lime font-label-caps text-label-caps mb-4">
+                {group.name}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-code"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -32,4 +76,4 @@ function TechStack() {
   );
 }
 
-export default TechStack;
+
