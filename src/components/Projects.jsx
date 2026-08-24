@@ -1,7 +1,9 @@
-import { IconArrowUpRight, IconCode } from "@tabler/icons-react";
+import { useState } from "react";
+import PropTypes from "prop-types";
+import { IconArrowUpRight, IconCode, IconPhotoOff } from "@tabler/icons-react";
 
 const projects = [
-    {
+  {
     title: "GAMERS.PH",
     description:
       "A gaming hub covering console, PC, and mobile titles, with reviews, news, and trailers for casual and hardcore gamers alike.",
@@ -70,7 +72,7 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB"],
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDMkmZq4RaOGMREQEhJ6OaB5UERhuiyascdtQIbfcjxLgEHBH7Ge9AzXXuRtjs5-KDYSXJ0Qt6DUU_PKG53aebfiGl60FAQsoBLqAeuKQsH-zFcN8zZlFlOUZwW2P30sEBcmfjYorSwlJA07hLgxpz9sGvRf1dRV_wQ4VVoUpQ-PefA8T2iuQKC3pyA1zYcg5rTGCV_KhzTHhNkquvoqAD0YHkHJFt_Tyaa2hPTfIOpwvCmVb7HzrJZ",
-    links: [{ label: "View Live", href: "https://buddie.ph/" }],
+    links: [],
   },
   {
     title: "PARKRIDGE",
@@ -79,12 +81,7 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB"],
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCbXO39XxY4pPz2KvuG1qKJSD5KTG711UMTspT3SRCKyAsLhfnYqlmtSvumc2Os2rFE0I7L3Lojyr_xWewTnT-fe18-sm3CHPyXewSr50VZaFMsEfSnoykDuB7ozaBaCgUFsB1t_SnhNMuodS31q7MxRn7sJO4qFBb8hHIufKfAntCOPZmoemPWeyMlZ-5es1j-MrcLTRRKoWvta1MWK7exYPm_hNmHsPJOU4XNnw3aO0NpvLog8p7W",
-    links: [
-      {
-        label: "View Live",
-        href: "https://parkridgeapp-frontend.onrender.com/",
-      },
-    ],
+    links: [],
   },
   {
     title: "CNN Image Classification",
@@ -92,7 +89,9 @@ const projects = [
       "Two convolutional neural networks built with TensorFlow/Keras, applying the same architecture to handwritten digit recognition and clothing classification. Custom images are preprocessed with OpenCV and run through the trained models.",
     tags: ["Python", "TensorFlow/Keras", "CNN", "OpenCV", "scikit-learn"],
     image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UyQybPxXEPSG8YTs5Phpe565pZ4TJaq0EG58MiATYebvR0AnSrK9R5IV12SOWCylz3I9Gao_NvpX_OfRM1CgZcbfoYHOIYlC53cWsd28czDXLnnowOY2nty9-hwmRI5T9LFYKaoeE1KfhdXtyEqawt-ev4zr6C6qnHYQ16rPaVC2zcUMuNnRscrqCbsd61CMUEE5jHTB-ts8AA6PkXW03JT0XuPTp8meL0kAohMao_K7rVNjroB9JIFQ",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAw_YxsnBYMPwy17d-WU_5GEzNtBOSv6dlM556fbiyL0xxl5SBhvHyCetzR-xFR1lql-FWkXIHfR62fe_Yex1s-7QSsIsRB4DaRw5AptIonrUsUE1VFNJ1qtSpZH67kxXSh-HLG5L2ecKtISrR8TOL_q180ekLHeQKL4uBLqb9RkgixyMwYtpqFhi6tC1880O1mdNuzA2OriqoitP9QUnaxjNdNv7_SPt4KrFT2rfMEAr3fKv9Opnhy",
+    // image:
+    //   "https://lh3.googleusercontent.com/aida/AEtjO1UyQybPxXEPSG8YTs5Phpe565pZ4TJaq0EG58MiATYebvR0AnSrK9R5IV12SOWCylz3I9Gao_NvpX_OfRM1CgZcbfoYHOIYlC53cWsd28czDXLnnowOY2nty9-hwmRI5T9LFYKaoeE1KfhdXtyEqawt-ev4zr6C6qnHYQ16rPaVC2zcUMuNnRscrqCbsd61CMUEE5jHTB-ts8AA6PkXW03JT0XuPTp8meL0kAohMao_K7rVNjroB9JIFQ",
     links: [
       {
         label: "View Notebook",
@@ -130,6 +129,32 @@ const projects = [
   },
 ];
 
+function ProjectImage({ image, title }) {
+  const [broken, setBroken] = useState(false);
+
+  if (broken) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-onyx-black">
+        <IconPhotoOff size={64} stroke={1} className="opacity-30" color="#CCFF00" />
+      </div>
+    );
+  }
+
+  return (
+    <img
+      className="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100"
+      src={image}
+      alt={`${title} project preview`}
+      onError={() => setBroken(true)}
+    />
+  );
+}
+
+ProjectImage.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
 export default function Projects() {
   return (
     <section
@@ -147,11 +172,7 @@ export default function Projects() {
             className="project-card relative rounded-xl overflow-hidden bg-graphite-grey border border-border-subtle h-[400px] group cursor-pointer"
           >
             <div className="absolute inset-0 bg-onyx-black z-0">
-              <img
-                className="w-full h-full object-cover project-image opacity-60 group-hover:opacity-100"
-                src={image}
-                alt={`${title} project preview`}
-              />
+              <ProjectImage image={image} title={title} />
             </div>
             <div className="absolute top-0 left-0 w-full p-6 z-10 bg-gradient-to-b from-onyx-black/90 to-transparent">
               <h3 className="font-headline-md text-headline-md text-primary">
