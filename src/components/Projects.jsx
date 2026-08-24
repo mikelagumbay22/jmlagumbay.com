@@ -1,30 +1,7 @@
 import { IconArrowUpRight, IconCode } from "@tabler/icons-react";
 
 const projects = [
-  {
-    title: "BUDDIE.PH",
-    description:
-      "A trusted pet care platform for managing pet health records, connecting with verified veterinarians, and booking care — all in one place.",
-    tags: ["React", "Node.js", "MongoDB"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMkmZq4RaOGMREQEhJ6OaB5UERhuiyascdtQIbfcjxLgEHBH7Ge9AzXXuRtjs5-KDYSXJ0Qt6DUU_PKG53aebfiGl60FAQsoBLqAeuKQsH-zFcN8zZlFlOUZwW2P30sEBcmfjYorSwlJA07hLgxpz9sGvRf1dRV_wQ4VVoUpQ-PefA8T2iuQKC3pyA1zYcg5rTGCV_KhzTHhNkquvoqAD0YHkHJFt_Tyaa2hPTfIOpwvCmVb7HzrJZ",
-    links: [{ label: "View Live", href: "https://buddie.ph/" }],
-  },
-  {
-    title: "PARKRIDGE",
-    description:
-      "A community management tool keeping residents connected through announcements, facility requests, issue reporting, and construction monitoring.",
-    tags: ["React", "Node.js", "MongoDB"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCbXO39XxY4pPz2KvuG1qKJSD5KTG711UMTspT3SRCKyAsLhfnYqlmtSvumc2Os2rFE0I7L3Lojyr_xWewTnT-fe18-sm3CHPyXewSr50VZaFMsEfSnoykDuB7ozaBaCgUFsB1t_SnhNMuodS31q7MxRn7sJO4qFBb8hHIufKfAntCOPZmoemPWeyMlZ-5es1j-MrcLTRRKoWvta1MWK7exYPm_hNmHsPJOU4XNnw3aO0NpvLog8p7W",
-    links: [
-      {
-        label: "View Live",
-        href: "https://parkridgeapp-frontend.onrender.com/",
-      },
-    ],
-  },
-  {
+    {
     title: "GAMERS.PH",
     description:
       "A gaming hub covering console, PC, and mobile titles, with reviews, news, and trailers for casual and hardcore gamers alike.",
@@ -83,6 +60,29 @@ const projects = [
       {
         label: "View Project",
         href: "https://agents-missions-springboot.onrender.com",
+      },
+    ],
+  },
+  {
+    title: "BUDDIE.PH",
+    description:
+      "A trusted pet care platform for managing pet health records, connecting with verified veterinarians, and booking care — all in one place.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMkmZq4RaOGMREQEhJ6OaB5UERhuiyascdtQIbfcjxLgEHBH7Ge9AzXXuRtjs5-KDYSXJ0Qt6DUU_PKG53aebfiGl60FAQsoBLqAeuKQsH-zFcN8zZlFlOUZwW2P30sEBcmfjYorSwlJA07hLgxpz9sGvRf1dRV_wQ4VVoUpQ-PefA8T2iuQKC3pyA1zYcg5rTGCV_KhzTHhNkquvoqAD0YHkHJFt_Tyaa2hPTfIOpwvCmVb7HzrJZ",
+    links: [{ label: "View Live", href: "https://buddie.ph/" }],
+  },
+  {
+    title: "PARKRIDGE",
+    description:
+      "A community management tool keeping residents connected through announcements, facility requests, issue reporting, and construction monitoring.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCbXO39XxY4pPz2KvuG1qKJSD5KTG711UMTspT3SRCKyAsLhfnYqlmtSvumc2Os2rFE0I7L3Lojyr_xWewTnT-fe18-sm3CHPyXewSr50VZaFMsEfSnoykDuB7ozaBaCgUFsB1t_SnhNMuodS31q7MxRn7sJO4qFBb8hHIufKfAntCOPZmoemPWeyMlZ-5es1j-MrcLTRRKoWvta1MWK7exYPm_hNmHsPJOU4XNnw3aO0NpvLog8p7W",
+    links: [
+      {
+        label: "View Live",
+        href: "https://parkridgeapp-frontend.onrender.com/",
       },
     ],
   },
