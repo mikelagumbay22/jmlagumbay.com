@@ -1,5 +1,5 @@
 import { useState } from "react";
-import JmLogo from "../assets/JmlLogo.png";
+import JmLogo from "../assets/jmlnewlogo.png";
 import { RESUME_URL } from "../constants";
 
 const links = [
@@ -21,7 +21,7 @@ export default function Navigation() {
         >
           <img
             alt="JM Lagumbay Logo"
-            className="h-10 w-10 object-contain rounded-full border border-border-subtle group-hover:border-electric-lime transition-colors bg-onyx-black"
+            className="h-10 w-10 object-contain  border border-border-subtle group-hover:border-electric-lime transition-colors bg-onyx-black"
             src={JmLogo}
           />
           <span className="font-headline-md text-headline-md font-bold text-electric-lime tracking-tighter">

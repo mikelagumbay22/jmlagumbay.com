@@ -9,7 +9,7 @@ const projects = [
       "A gaming hub covering console, PC, and mobile titles, with reviews, news, and trailers for casual and hardcore gamers alike.",
     tags: ["React", "Node.js"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD6NGzITM3DDZdiDbl-BZo9jR0_wgZyTfN9kwouf82GXSNTi-JeoNaE85gjairE4XJA5CMftBao68EBUD9bo3ed2Xc_FONRou79oYua-w07wIX6Yj6cqBoSKyqHSI69OwB-7hcHPRwkw-BPU3su-Bq5DbhOwUsScC8SGvQud7ac4_OdDQE6gRM0BzIOLwWjaADNCeeOhx_GTF_2vj96M4VCbCdj0AUti3kBDmf7bmto5QtNKliAzvsk",
+      "/public/images/gamers-ph.png",
     links: [{ label: "View Live", href: "https://gamersph.netlify.app/" }],
   },
   {
@@ -18,7 +18,7 @@ const projects = [
       "A retro-inspired arcade shooter built with high-performance logic. Maneuver through desert terrain, destroy enemy shapes, and survive multiple levels of increasing difficulty.",
     tags: ["C++", "Game Dev"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAlFW8eGfjQu52CawmyaQbbKC-GlZPru2BdLncAlntdhHYKcHhjCKrh5HsgThaOI6RoXO6MecwZlb_LR86ZAILbtw7_RXYlsV9F20qakZiuXs8DRzETUCq64b4XEdFIXlpgp-jNwvMBI_7nwYiOextJKS5visOh8OAuzdjS49uHYmYlo7Us_0mGbzaSq4Mt8LtlnHoEmP0wq_OfU4C7IbtTmSvk2EhCE7BfAiiPSgTWbc6gjPWGUrf0",
+      "/public/images/battle-tank.png",
     links: [
       {
         label: "Play Now",
@@ -37,7 +37,7 @@ const projects = [
       "A Spring Boot REST API for managing agent records. Full CRUD with Spring Data JPA and Hibernate over an H2 database, documented with an interactive OpenAPI/Swagger interface.",
     tags: ["Java", "Spring Boot", "REST API", "Hibernate"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDLMqv-AHGQUu4n6-iLj4JcDCGkk0AADDEkOGYW8zQEbdECwvEg7tS33foReUaAaeraq6yUTxxRfy3FebluZhGsL4kmcx_OB647Jkipf1shFg3OD8rvdUzrOzO4tzeqCRFVeDdQRpICXCNuS5FrcuUNMZG_rTFARtqwmd-3ikRSuaYBBka3-Glv_inEOtpGZz4fiV5TYigMV2DqjUC2AJgnWAs8TL_Q2FC_wnR1GPHsbr69RhDD7dS3",
+      "/public/images/agent-data-api.png",
     links: [
       {
         label: "View Project",
@@ -57,7 +57,7 @@ const projects = [
       "Gradle",
     ],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA-ZNVCF3HpsNktDdAeemfOHs6F2i2NXX9JGOFv7X9L8cRhKxuclki-lR21tZe2bhFBcBrYt4pz6saAwrxUH4BUkInrTVaV0bg4ojQLELTJpTAUJP3_nOrMzKe62VFcVzcWGci6Ea56djZEKBXkBaAgNkjN85OZcvJhc6Y2ieY_TeX6VyTT3YhJN0L8a3izs1wpXirxssYd-uKcZyz3CH5s40VbaMO1mN4U35SjhjklLlswOCbPqlPy",
+      "/public/images/agents-and-missions.png",
     links: [
       {
         label: "View Project",
@@ -71,7 +71,7 @@ const projects = [
       "A trusted pet care platform for managing pet health records, connecting with verified veterinarians, and booking care — all in one place.",
     tags: ["React", "Node.js", "MongoDB"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMkmZq4RaOGMREQEhJ6OaB5UERhuiyascdtQIbfcjxLgEHBH7Ge9AzXXuRtjs5-KDYSXJ0Qt6DUU_PKG53aebfiGl60FAQsoBLqAeuKQsH-zFcN8zZlFlOUZwW2P30sEBcmfjYorSwlJA07hLgxpz9sGvRf1dRV_wQ4VVoUpQ-PefA8T2iuQKC3pyA1zYcg5rTGCV_KhzTHhNkquvoqAD0YHkHJFt_Tyaa2hPTfIOpwvCmVb7HzrJZ",
+      "/public/images/buddie-ph.png",
     links: [],
   },
   {
@@ -80,7 +80,7 @@ const projects = [
       "A community management tool keeping residents connected through announcements, facility requests, issue reporting, and construction monitoring.",
     tags: ["React", "Node.js", "MongoDB"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCbXO39XxY4pPz2KvuG1qKJSD5KTG711UMTspT3SRCKyAsLhfnYqlmtSvumc2Os2rFE0I7L3Lojyr_xWewTnT-fe18-sm3CHPyXewSr50VZaFMsEfSnoykDuB7ozaBaCgUFsB1t_SnhNMuodS31q7MxRn7sJO4qFBb8hHIufKfAntCOPZmoemPWeyMlZ-5es1j-MrcLTRRKoWvta1MWK7exYPm_hNmHsPJOU4XNnw3aO0NpvLog8p7W",
+      "/public/images/parkridge.png",
     links: [],
   },
   {
@@ -89,7 +89,7 @@ const projects = [
       "Two convolutional neural networks built with TensorFlow/Keras, applying the same architecture to handwritten digit recognition and clothing classification. Custom images are preprocessed with OpenCV and run through the trained models.",
     tags: ["Python", "TensorFlow/Keras", "CNN", "OpenCV", "scikit-learn"],
     image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UyQybPxXEPSG8YTs5Phpe565pZ4TJaq0EG58MiATYebvR0AnSrK9R5IV12SOWCylz3I9Gao_NvpX_OfRM1CgZcbfoYHOIYlC53cWsd28czDXLnnowOY2nty9-hwmRI5T9LFYKaoeE1KfhdXtyEqawt-ev4zr6C6qnHYQ16rPaVC2zcUMuNnRscrqCbsd61CMUEE5jHTB-ts8AA6PkXW03JT0XuPTp8meL0kAohMao_K7rVNjroB9JIFQ",
+      "/public/images/cnn-image-classification.png",
     links: [
       {
         label: "View Notebook",
@@ -103,7 +103,7 @@ const projects = [
       "A machine learning model deployed as a live web service. A Naive Bayes classifier trained on 47,590 news headlines predicts which of 41 news sections a headline belongs to.",
     tags: ["Python", "scikit-learn", "NLP", "Flask", "Docker"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAw_YxsnBYMPwy17d-WU_5GEzNtBOSv6dlM556fbiyL0xxl5SBhvHyCetzR-xFR1lql-FWkXIHfR62fe_Yex1s-7QSsIsRB4DaRw5AptIonrUsUE1VFNJ1qtSpZH67kxXSh-HLG5L2ecKtISrR8TOL_q180ekLHeQKL4uBLqb9RkgixyMwYtpqFhi6tC1880O1mdNuzA2OriqoitP9QUnaxjNdNv7_SPt4KrFT2rfMEAr3fKv9Opnhy",
+      "/public/images/news-headline-classifier-api.png",
     links: [
       {
         label: "View Live",
@@ -117,7 +117,7 @@ const projects = [
       "Unsupervised learning applied to images: every pixel is clustered as a point in RGB colour space, then rewritten as its cluster centre to rebuild the image from a reduced palette. Interactive web app built with scikit-learn and Flask, deployed with Docker.",
     tags: ["Python", "scikit-learn", "Unsupervised Learning", "NumPy", "Flask", "Docker"],
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDCLMswisSrmh8HKIR-Kb7DbuqhriV_fL7SAh6MMP65I7osZDwq9D5brMk9Dk0E37RKlO_DyZ-jvIbfmAKMe7tg_DZ49TIek2u02MJUDqeXV2xXXKwGuldrDM-tEZdyXz6Z-MKRuJKUtLKK2LSp1LkMRD1AFfoN4kMeq791DjmbQC9fcO8jvZ5kThGH6DsUC2LlHpOcAs4xjpZBxr6-2vJ1kI5P9-5PpOvTx3QJt0bVU7wd19ynb5-U",
+      "/public/images/kmeans-image-compression.png",
     links: [
       {
         label: "View Live",
