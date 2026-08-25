@@ -60,8 +60,8 @@ export default function About() {
               </span>
               <ul className="font-body-md text-body-md text-primary">
                 <li>Diploma, Computer Programming — Sheridan College (2026)</li>
-                <li>Full Stack Web Development — Uplift Code Camp (2024)</li>
-                <li>Degree, Business Management — P.S.B.A. - QC (2024)</li>
+                <li>Certificate, Full Stack Web Development — Uplift Code Camp (2024)</li>
+                <li>Degree, Major in Business Management — P.S.B.A. - QC (2004)</li>
               </ul>
             </div>
           </div>
