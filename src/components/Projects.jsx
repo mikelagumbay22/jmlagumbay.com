@@ -9,16 +9,16 @@ const projects = [
       "A gaming hub covering console, PC, and mobile titles, with reviews, news, and trailers for casual and hardcore gamers alike.",
     tags: ["React", "Node.js"],
     image:
-      "/public/images/gamers-ph.png",
+      "/images/gamers-ph.png",
     links: [{ label: "View Live", href: "https://gamersph.netlify.app/" }],
   },
   {
     title: "Battle Tank",
     description:
       "A retro-inspired arcade shooter built with high-performance logic. Maneuver through desert terrain, destroy enemy shapes, and survive multiple levels of increasing difficulty.",
-    tags: ["C++", "Game Dev"],
+    tags: ["C#", "Game Dev"],
     image:
-      "/public/images/battle-tank.png",
+      "/images/battle-tank.png",
     links: [
       {
         label: "Play Now",
@@ -37,7 +37,7 @@ const projects = [
       "A Spring Boot REST API for managing agent records. Full CRUD with Spring Data JPA and Hibernate over an H2 database, documented with an interactive OpenAPI/Swagger interface.",
     tags: ["Java", "Spring Boot", "REST API", "Hibernate"],
     image:
-      "/public/images/agent-data-api.png",
+      "/images/agent-data-api.png",
     links: [
       {
         label: "View Project",
@@ -57,7 +57,7 @@ const projects = [
       "Gradle",
     ],
     image:
-      "/public/images/agents-and-missions.png",
+      "/images/agents-and-missions.png",
     links: [
       {
         label: "View Project",
@@ -71,7 +71,7 @@ const projects = [
       "A trusted pet care platform for managing pet health records, connecting with verified veterinarians, and booking care — all in one place.",
     tags: ["React", "Node.js", "MongoDB"],
     image:
-      "/public/images/buddie-ph.png",
+      "/images/buddie-ph.png",
     links: [],
   },
   {
@@ -80,7 +80,7 @@ const projects = [
       "A community management tool keeping residents connected through announcements, facility requests, issue reporting, and construction monitoring.",
     tags: ["React", "Node.js", "MongoDB"],
     image:
-      "/public/images/parkridge.png",
+      "/images/parkridge.png",
     links: [],
   },
   {
@@ -89,7 +89,7 @@ const projects = [
       "Two convolutional neural networks built with TensorFlow/Keras, applying the same architecture to handwritten digit recognition and clothing classification. Custom images are preprocessed with OpenCV and run through the trained models.",
     tags: ["Python", "TensorFlow/Keras", "CNN", "OpenCV", "scikit-learn"],
     image:
-      "/public/images/cnn-image-classification.png",
+      "/images/cnn-image-classification.png",
     links: [
       {
         label: "View Notebook",
@@ -103,7 +103,7 @@ const projects = [
       "A machine learning model deployed as a live web service. A Naive Bayes classifier trained on 47,590 news headlines predicts which of 41 news sections a headline belongs to.",
     tags: ["Python", "scikit-learn", "NLP", "Flask", "Docker"],
     image:
-      "/public/images/news-headline-classifier-api.png",
+      "/images/news-headline-classifier-api.png",
     links: [
       {
         label: "View Live",
@@ -117,7 +117,7 @@ const projects = [
       "Unsupervised learning applied to images: every pixel is clustered as a point in RGB colour space, then rewritten as its cluster centre to rebuild the image from a reduced palette. Interactive web app built with scikit-learn and Flask, deployed with Docker.",
     tags: ["Python", "scikit-learn", "Unsupervised Learning", "NumPy", "Flask", "Docker"],
     image:
-      "/public/images/kmeans-image-compression.png",
+      "/images/kmeans-image-compression.png",
     links: [
       {
         label: "View Live",
