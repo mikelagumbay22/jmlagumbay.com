@@ -22,9 +22,10 @@ export default function About() {
 
           <div className="space-y-stack-md text-on-surface-variant font-body-lg text-body-lg">
             <p>
-              Transitioning from a solid foundation in customer experience at
-              leading tech companies, I&apos;ve pivoted my career to where my
-              true passion lies: building robust, scalable web applications.
+              Transitioning from a solid foundation in customer experience and 
+              continuous improvement at leading tech companies, I&apos;ve 
+              pivoted my career to where my true passion lies: building robust, 
+              scalable web applications.
             </p>
             <p>
               My journey isn&apos;t traditional, and that&apos;s my strength.
