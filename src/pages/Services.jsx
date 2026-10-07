@@ -6,13 +6,24 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import { PACKAGES, CARE, STEPS, HANDOVER } from "@/data/services";
 
-const LIMITED_LINE = "Launch pricing, available for a limited time";
+// Reads exactly: "Launch pricing ends December 31, 2026. From January 1, 2027: $699 / $1,199 / $1,799 (handover $150)."
+// The spans only control where it wraps (each sentence, and the price list, stays in one piece).
+function LaunchEndLine() {
+  return (
+    <p className="mt-5 inline-block max-w-full rounded-2xl border border-electric-lime/40 px-4 py-1.5 font-mono text-[13px] font-medium text-electric-lime lg:rounded-full">
+      <span className="block sm:inline sm:whitespace-nowrap">Launch pricing ends <span className="whitespace-nowrap">December 31, 2026.</span></span>{" "}
+      <span className="sm:whitespace-nowrap">
+        From January 1, 2027:{" "}<span className="whitespace-nowrap">$699 / $1,199 / $1,799</span>{" "}<span className="whitespace-nowrap">(handover $150).</span>
+      </span>
+    </p>
+  );
+}
 
-/** "Launch price $499" with the regular price in a real <s>, read as "regular price $699". */
+/** "Launch price $499" with the January 1, 2027 price in a real <s>, read as "Price from January 1, 2027: $699". */
 function Regular({ value, className = "" }) {
   return (
     <s className={`text-on-surface-variant decoration-[1.5px] ${className}`}>
-      <span className="sr-only">Regular price </span>{value}
+      <span className="sr-only">Price from January 1, 2027: </span>{value}
     </s>
   );
 }
@@ -22,7 +33,7 @@ const FAQ = [
   { q: "What if I already have a web address?", a: <>No problem. We can use the one you already have.</> },
   { q: "How long does it take?", a: <>3–14 business days, depending on the package: Starter 3–5, Business 7–10, Premium 10–14. The clock starts when I have your deposit, photos and info.</> },
   { q: "What do you need from me?", a: <>A quick 20-minute chat, your photos, your business info (hours, services, address) and the 50% deposit. I write the words for you.</> },
-  { q: "What if I need changes later?", a: <>With a Care Plan, small changes are included: 1 a month on Starter, up to 3 a month on Business, up to 2 hours a month on Premium. Without one, later changes are $50 an hour (1-hour minimum).</> },
+  { q: "What if I need changes later?", a: <>With a Care Plan, small changes are included: 1 a month on Starter, up to 3 a month on Business, up to 2 hours a month on Premium. Without one, later changes are $50&nbsp;an hour (1-hour minimum).</> },
   { q: "What happens after the first year?", a: <>Your first year of web address is included. After that, either the Care Plan keeps everything running and renewed, or you pay one yearly fee ($49 / $99 / $149 per year for Starter / Business / Premium). If you&apos;d rather run it yourself, choose the full handover.</> },
   { q: "How do I pay? Is there HST?", a: <>50% to start and 50% when your site is ready, before it goes live, by Interac e-Transfer. Prices are in Canadian dollars, and no HST is charged.</> },
   { q: "Can I see an example?", a: <>Yes! I can show you live sample websites right now. <Link to="/work" className="link">See my demo sites</Link></> },
@@ -72,10 +83,10 @@ export function Component() {
 
       <section className="section" aria-labelledby="packages-title">
         <div className="wrap">
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-4xl">
             <h2 id="packages-title" className="h-section">Pick your package</h2>
             <p className="lead mt-4">All prices are one-time, in Canadian dollars. No HST charged.</p>
-            <p className="mt-5 inline-flex rounded-full border border-electric-lime/40 px-4 py-1.5 font-mono text-[13px] font-medium text-electric-lime">{LIMITED_LINE}</p>
+            <LaunchEndLine />
           </Reveal>
           <ul className="mt-12 grid gap-6 lg:grid-cols-3">
             {PACKAGES.map((p, i) => (
@@ -156,7 +167,7 @@ export function Component() {
               <h3 className="text-xl font-extrabold">Want to run it yourself? Full handover</h3>
               <p className="mt-3 leading-relaxed text-on-surface-variant">
                 <span className="mb-2 block font-mono text-[12.5px] font-medium uppercase tracking-[0.12em] text-electric-lime">Launch price</span>
-                <strong className="text-primary">{HANDOVER.price} one-time</strong> <Regular value={HANDOVER.regular} />. Everything goes in your own accounts, with all logins, files and a short walkthrough. There&apos;s no yearly fee from me; you renew your web address yourself (about $15–$25/year). Later changes are $50 an hour (1-hour minimum).
+                <strong className="text-primary">{HANDOVER.price} one-time</strong> <Regular value={HANDOVER.regular} />. Everything goes in your own accounts, with all logins, files and a short walkthrough. There&apos;s no yearly fee from me; you renew your web address yourself (about $15–$25/year). Later changes are $50&nbsp;an hour (1-hour minimum).
               </p>
             </Reveal>
           </div>

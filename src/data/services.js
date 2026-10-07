@@ -1,5 +1,5 @@
-// Services page data (copy.md Page 2). John, Oct 7: launch prices shown with the regular price struck through.
-// Launch prices are shown with the regular price struck through (Services page only).
+// Services page data (copy.md Page 2). John, Oct 7: launch prices until December 31, 2026, shown with the
+// January 1, 2027 price struck through (Services page only).
 export const PACKAGES = [
   {
     id: "starter",

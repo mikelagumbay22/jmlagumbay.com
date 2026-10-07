@@ -5,7 +5,7 @@ Multi-page business site for **JM Lagumbay Website Design** (John Michael Lagumb
 | Route | File | Content |
 |---|---|---|
 | `/` | `src/pages/Home.jsx` | Kinetic hero, "What you get", 3 featured demo sites, trust line, CTA |
-| `/services` | `src/pages/Services.jsx` | 3 packages (launch prices with the regular price struck through), Care Plan, yearly fee, full handover, 4 steps, FAQ, CTA |
+| `/services` | `src/pages/Services.jsx` | 3 packages (launch prices until December 31, 2026, with the January 1, 2027 price struck through), Care Plan, yearly fee, full handover, 4 steps, FAQ, CTA |
 | `/work` | `src/pages/Work.jsx` | Filterable grid: 5 demo sites (auto-scrolling device frames) + 9 projects |
 | `/about` | `src/pages/About.jsx` | Story, portrait, scroll-drawn career timeline, education, tools, recruiter block |
 | `/contact` | `src/pages/Contact.jsx` | Phone, email, location, links + Web3Forms form with validation and send states |
