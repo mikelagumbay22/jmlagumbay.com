@@ -33,7 +33,7 @@ The form posts to Web3Forms with the access key from `VITE_WEB3FORMS_KEY`. **Nev
 Each route is a real prerendered file (`/work` → `work.html`), so deep links return 200 on Pages with no SPA redirect trick. Unknown paths get `404.html` (noindex).
 
 ## Where things live
-- **Copy and data:** `src/data/*.js`. Placeholder `[RATE]` is rendered by `<Placeholder name="RATE" />` on /services.
+- **Copy and data:** `src/data/*.js`, plus the Services page text in `src/pages/Services.jsx` (handover box and FAQ, including the $50 an hour rate for later changes).
 - **Per-page SEO:** `src/data/seo.js` + `src/components/Seo.jsx`. JSON-LD (Person + ProfessionalService) is in `index.html`. `public/robots.txt` and `public/sitemap.xml`.
 - **Images:**
   - `scripts/make_images.py` (portrait, logo, favicons, project thumbnails).

@@ -40,7 +40,6 @@
   .btn-sm { @apply min-h-[44px] px-5 py-2 text-[14px]; }
   .link { @apply font-semibold text-electric-lime underline decoration-electric-lime/40 underline-offset-4 transition-colors hover:decoration-electric-lime; }
   .chip { @apply inline-flex items-center rounded-full border border-border-subtle bg-white/[0.04] px-3 py-1 font-mono text-[12px] font-medium text-on-surface; }
-  .placeholder-mark { @apply rounded border border-dashed border-onyx-black bg-electric-lime px-1.5 py-0.5 font-mono text-[0.85em] font-medium text-onyx-black; }
 }
 
 /* Skip link */

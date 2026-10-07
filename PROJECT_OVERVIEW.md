@@ -17,4 +17,4 @@ Multi-page business site for **JM Lagumbay Website Design** (John Michael Lagumb
 
 **Contact details** come from `src/data/site.js`: phone (647) 633-7623 and jmlagumbay422@gmail.com. No other personal address may be added.
 
-**Open items for John:** the `[RATE]` hourly rate (Services: handover and FAQ).
+**Hourly rate:** later changes without a Care Plan are $50 an hour, 1-hour minimum (Services: handover box and FAQ).

@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
-import Placeholder from "@/components/Placeholder";
 import { PACKAGES, CARE, STEPS, HANDOVER } from "@/data/services";
 
 const LIMITED_LINE = "Launch pricing, available for a limited time";
@@ -23,7 +22,7 @@ const FAQ = [
   { q: "What if I already have a web address?", a: <>No problem. We can use the one you already have.</> },
   { q: "How long does it take?", a: <>3–14 business days, depending on the package: Starter 3–5, Business 7–10, Premium 10–14. The clock starts when I have your deposit, photos and info.</> },
   { q: "What do you need from me?", a: <>A quick 20-minute chat, your photos, your business info (hours, services, address) and the 50% deposit. I write the words for you.</> },
-  { q: "What if I need changes later?", a: <>With a Care Plan, small changes are included: 1 a month on Starter, up to 3 a month on Business, up to 2 hours a month on Premium. Without one, later changes are <Placeholder name="RATE" />/hour (1-hour minimum).</> },
+  { q: "What if I need changes later?", a: <>With a Care Plan, small changes are included: 1 a month on Starter, up to 3 a month on Business, up to 2 hours a month on Premium. Without one, later changes are $50 an hour (1-hour minimum).</> },
   { q: "What happens after the first year?", a: <>Your first year of web address is included. After that, either the Care Plan keeps everything running and renewed, or you pay one yearly fee ($49 / $99 / $149 per year for Starter / Business / Premium). If you&apos;d rather run it yourself, choose the full handover.</> },
   { q: "How do I pay? Is there HST?", a: <>50% to start and 50% when your site is ready, before it goes live, by Interac e-Transfer. Prices are in Canadian dollars, and no HST is charged.</> },
   { q: "Can I see an example?", a: <>Yes! I can show you live sample websites right now. <Link to="/work" className="link">See my demo sites</Link></> },
@@ -157,7 +156,7 @@ export function Component() {
               <h3 className="text-xl font-extrabold">Want to run it yourself? Full handover</h3>
               <p className="mt-3 leading-relaxed text-on-surface-variant">
                 <span className="mb-2 block font-mono text-[12.5px] font-medium uppercase tracking-[0.12em] text-electric-lime">Launch price</span>
-                <strong className="text-primary">{HANDOVER.price} one-time</strong> <Regular value={HANDOVER.regular} />. Everything goes in your own accounts, with all logins, files and a short walkthrough. There&apos;s no yearly fee from me; you renew your web address yourself (about $15–$25/year). Later changes: <Placeholder name="RATE" />/hour (1-hour minimum).
+                <strong className="text-primary">{HANDOVER.price} one-time</strong> <Regular value={HANDOVER.regular} />. Everything goes in your own accounts, with all logins, files and a short walkthrough. There&apos;s no yearly fee from me; you renew your web address yourself (about $15–$25/year). Later changes are $50 an hour (1-hour minimum).
               </p>
             </Reveal>
           </div>
