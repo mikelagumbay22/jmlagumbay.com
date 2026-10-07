@@ -27,7 +27,7 @@ export const PACKAGES = [
     name: "Business",
     price: "$849",
     regular: "$1,199",
-    popular: true,
+    recommended: true,
     tagline: "A custom look that brings in more calls and customers.",
     intro: "Everything in Starter, plus:",
     items: [

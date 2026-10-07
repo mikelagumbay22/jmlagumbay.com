@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, m } from "motion/react";
-import { IconArrowRight, IconArrowUpRight, IconPlayerPause, IconPlayerPlay } from "@tabler/icons-react";
+import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import DemoCard from "@/components/DemoCard";
+import PreviewPauseButton from "@/components/PreviewPauseButton";
 import ProjectCard from "@/components/ProjectCard";
 import CtaBand from "@/components/CtaBand";
 import { DEMOS, PROJECTS, FILTERS } from "@/data/work";
@@ -65,15 +66,7 @@ export function Component() {
                     I built these demo concepts to show local owners what their site could look like. The businesses are real Mississauga shops, but <strong className="text-primary">they didn&apos;t hire me</strong> and these aren&apos;t their official websites.
                   </p>
                 </Reveal>
-                <button
-                  type="button"
-                  aria-pressed={paused}
-                  onClick={() => setPaused((v) => !v)}
-                  className="btn-ghost btn-sm w-fit shrink-0 motion-reduce:hidden"
-                >
-                  {paused ? <IconPlayerPlay size={18} stroke={2} aria-hidden="true" /> : <IconPlayerPause size={18} stroke={2} aria-hidden="true" />}
-                  {paused ? "Play previews" : "Pause previews"}
-                </button>
+                <PreviewPauseButton paused={paused} onToggle={() => setPaused((v) => !v)} />
               </div>
               <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {DEMOS.map((d, i) => (

@@ -55,6 +55,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error | offline
   const formRef = useRef(null);
   const statusRef = useRef(null);
+  const refocusName = useRef(false);
 
   // Preselect "What you need" from ?need= after hydration (the prerendered page has no query string).
   useEffect(() => {
@@ -64,7 +65,14 @@ export default function ContactForm() {
 
   useEffect(() => {
     if (status === "success" || status === "error" || status === "offline") statusRef.current?.focus();
+    // "Try again" / "Send another message" unmount themselves, so move focus to the first field of the form.
+    if (status === "idle" && refocusName.current) {
+      refocusName.current = false;
+      document.getElementById("name")?.focus();
+    }
   }, [status]);
+
+  const backToForm = () => { refocusName.current = true; setStatus("idle"); };
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -118,7 +126,7 @@ export default function ContactForm() {
         <IconCircleCheck size={44} stroke={1.8} aria-hidden="true" className="text-electric-lime" />
         <h2 ref={statusRef} tabIndex={-1} className="mt-4 text-2xl font-extrabold">Thanks, your message is on its way!</h2>
         <p className="mt-3 text-on-surface">I&apos;ll get back to you soon. If it&apos;s urgent, call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a>.</p>
-        <button type="button" className="btn-primary mt-7" onClick={() => setStatus("idle")}>Send another message</button>
+        <button type="button" className="btn-primary mt-7" onClick={backToForm}>Send another message</button>
       </div>
     );
   }
@@ -131,10 +139,10 @@ export default function ContactForm() {
           {status === "offline" ? (
             <>Looks like you&apos;re offline. Check your connection and try again.</>
           ) : (
-            <>Please try again in a moment, or call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> or email <a href={`mailto:${EMAIL}`} className="link break-all">{EMAIL}</a>.</>
+            <>Please try again in a moment, or call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> or email <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a>.</>
           )}
         </p>
-        <button type="button" className="btn-primary mt-7" onClick={() => setStatus("idle")}>Try again</button>
+        <button type="button" className="btn-primary mt-7" onClick={backToForm}>Try again</button>
       </div>
     );
   }

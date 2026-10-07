@@ -15,7 +15,7 @@ export default function Footer() {
             <strong className="font-display font-extrabold text-primary">JM Lagumbay Website Design</strong>: simple, good-looking websites for Mississauga small businesses.
           </p>
           <p className="text-on-surface-variant">
-            Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · <a href={`mailto:${EMAIL}`} className="link break-all">{EMAIL}</a> · {LOCATION}
+            Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · {LOCATION}
           </p>
         </div>
         <nav aria-label="Footer">

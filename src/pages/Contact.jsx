@@ -34,7 +34,7 @@ export function Component() {
           <Reveal>
             <ul className="space-y-7">
               <Row icon={IconPhone} label="Call or text"><a href={PHONE_HREF} className={linkCls}>{PHONE_DISPLAY}</a></Row>
-              <Row icon={IconMail} label="Email"><a href={`mailto:${EMAIL}`} className={`${linkCls} break-all`}>{EMAIL}</a></Row>
+              <Row icon={IconMail} label="Email"><a href={`mailto:${EMAIL}`} className={`${linkCls} [overflow-wrap:anywhere]`}>{EMAIL}</a></Row>
               <Row icon={IconMapPin} label="Based in"><span>{LOCATION}</span></Row>
               <Row icon={IconBrandLinkedin} label="Online">
                 <span className="flex flex-wrap gap-x-5">

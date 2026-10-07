@@ -43,10 +43,10 @@ function PackageCard({ p }) {
   return (
     <article
       aria-labelledby={`pkg-${p.id}`}
-      className={`relative flex h-full flex-col rounded-3xl border p-7 sm:p-8 ${p.popular ? "border-2 border-electric-lime bg-graphite-grey shadow-[0_0_60px_-20px_rgba(204,255,0,0.35)]" : "border-border-subtle bg-graphite-grey"}`}
+      className={`relative flex h-full flex-col rounded-3xl border p-7 sm:p-8 ${p.recommended ? "border-2 border-electric-lime bg-graphite-grey shadow-[0_0_60px_-20px_rgba(204,255,0,0.35)]" : "border-border-subtle bg-graphite-grey"}`}
     >
-      {p.popular && (
-        <p className="absolute -top-3.5 left-7 rounded-full bg-electric-lime px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-onyx-black">Most popular</p>
+      {p.recommended && (
+        <p className="absolute -top-3.5 left-7 rounded-full bg-electric-lime px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-onyx-black">Recommended</p>
       )}
       <h3 id={`pkg-${p.id}`} className="text-2xl font-extrabold">{p.name}</h3>
       <p className="mt-4 font-mono text-[12.5px] font-medium uppercase tracking-[0.12em] text-electric-lime">Launch price</p>
@@ -66,7 +66,7 @@ function PackageCard({ p }) {
         ))}
       </ul>
       <p className="mt-7 font-display font-bold text-primary">{p.turnaround}</p>
-      <Link to={`/contact?need=${p.id}`} className={`${p.popular ? "btn-primary" : "btn-ghost"} mt-5 w-full`}>
+      <Link to={`/contact?need=${p.id}`} className={`${p.recommended ? "btn-primary" : "btn-ghost"} mt-5 w-full`}>
         {p.cta} <IconArrowRight size={18} stroke={2.2} aria-hidden="true" />
       </Link>
     </article>

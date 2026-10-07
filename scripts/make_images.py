@@ -23,7 +23,6 @@ bbox = logo.getbbox(); logo = logo.crop(bbox)
 side = max(logo.size); sq = Image.new("RGBA", (side, side), (0, 0, 0, 0)); sq.paste(logo, ((side - logo.width) // 2, (side - logo.height) // 2)); logo = sq
 l80 = logo.resize((80, 80), Image.LANCZOS)
 save_webp(l80, PUB / "img/logo-80.webp", 90)
-l80.save(PUB / "img/logo-80.png", optimize=True)
 
 # Favicon set (opaque black background so the lime mark reads on any tab colour)
 def on_black(size):

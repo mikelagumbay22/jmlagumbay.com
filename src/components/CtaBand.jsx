@@ -19,7 +19,7 @@ export default function CtaBand({ title, text, primary = { to: "/contact", label
             {phone && (
               <a href={PHONE_HREF} className="btn-ghost w-full sm:w-auto">
                 <IconPhone size={18} stroke={2} aria-hidden="true" />
-                Call or text {PHONE_DISPLAY}
+                Call or text <span className="whitespace-nowrap">{PHONE_DISPLAY}</span>
               </a>
             )}
           </div>

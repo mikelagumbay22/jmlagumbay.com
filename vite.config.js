@@ -10,7 +10,6 @@ export default defineConfig({
   },
   build: {
     target: "es2020",
-    // The tall demo screenshots live in public/work and are served as-is.
     chunkSizeWarningLimit: 300,
   },
   ssgOptions: {

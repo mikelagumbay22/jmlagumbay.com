@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { IconArrowRight, IconDeviceMobile, IconMapPin, IconClockDollar, IconPhone } from "@tabler/icons-react";
 import Seo from "@/components/Seo";
 import Reveal from "@/components/Reveal";
 import HeroGlow from "@/components/HeroGlow";
 import DemoCard from "@/components/DemoCard";
+import PreviewPauseButton from "@/components/PreviewPauseButton";
 import CtaBand from "@/components/CtaBand";
 import { DEMOS, FEATURED_DEMOS } from "@/data/work";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
@@ -20,6 +21,7 @@ const HIGHLIGHTS = [
 
 export function Component() {
   const heroRef = useRef(null);
+  const [paused, setPaused] = useState(false);
   const featured = FEATURED_DEMOS.map((slug) => DEMOS.find((d) => d.slug === slug));
   return (
     <>
@@ -78,12 +80,15 @@ export function Component() {
         </div>
       </section>
 
-      <section className="section border-y border-border-subtle bg-graphite-grey/60" aria-labelledby="demos-title">
+      <section className="section border-y border-border-subtle bg-graphite-grey/60" aria-labelledby="demos-title" data-motion-paused={paused}>
         <div className="wrap">
-          <Reveal className="max-w-3xl">
-            <h2 id="demos-title" className="h-section">Demo sites for local businesses</h2>
-            <p className="lead mt-4">These are demo concepts I built to show what a site could look like for local shops. They&apos;re not real clients. Tap any one to try it on your phone.</p>
-          </Reveal>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <Reveal className="max-w-3xl">
+              <h2 id="demos-title" className="h-section">Demo sites for local businesses</h2>
+              <p className="lead mt-4">These are demo concepts I built to show what a site could look like for local shops. They&apos;re not real clients. Tap any one to try it on your phone.</p>
+            </Reveal>
+            <PreviewPauseButton paused={paused} onToggle={() => setPaused((v) => !v)} />
+          </div>
           <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((d, i) => (
               <Reveal as="li" key={d.slug} delay={i * 0.08}>
