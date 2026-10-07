@@ -24,3 +24,10 @@ dist-ssr
 *.sw?
 .env
 .env.local
+.vite-react-ssg-temp
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc

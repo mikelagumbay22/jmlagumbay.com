@@ -1,10 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
+import { ViteReactSSG } from "vite-react-ssg";
+import { routes } from "./routes";
+import "./styles/index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Every route is prerendered to real HTML at build time (vite-react-ssg), then hydrated.
+export const createRoot = ViteReactSSG({
+  routes,
+  future: {
+    v7_relativeSplatPath: true,
+    v7_fetcherPersist: true,
+    v7_normalizeFormMethod: true,
+    v7_skipActionErrorRevalidation: true,
+  },
+});

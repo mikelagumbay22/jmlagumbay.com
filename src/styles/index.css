@@ -1,0 +1,88 @@
+/* Self-hosted fonts, trimmed to the weights the design uses (latin subset):
+   Montserrat 700/800 (headings), Inter 400/600 (body), JetBrains Mono 500 (labels). SIL OFL, see /fonts/LICENSE-*.txt */
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/montserrat-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/montserrat-latin-800-normal.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/inter-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/inter-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2"); }
+/* Metric-matched fallbacks so the swap to the web fonts doesn't shift the layout */
+@font-face { font-family: "Montserrat Fallback"; src: local("Arial"); ascent-override: 85.79%; descent-override: 22.25%; line-gap-override: 0%; size-adjust: 112.83%; }
+@font-face { font-family: "Inter Fallback"; src: local("Arial"); ascent-override: 90.49%; descent-override: 22.56%; line-gap-override: 0%; size-adjust: 107.06%; }
+@font-face { font-family: "JetBrains Mono Fallback"; src: local("Courier New"); ascent-override: 102.02%; descent-override: 30.01%; line-gap-override: 0%; size-adjust: 99.98%; }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { background: #000; color-scheme: dark; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+  body { @apply bg-onyx-black font-body text-on-surface antialiased; margin: 0; min-height: 100vh; line-height: 1.6; }
+  h1, h2, h3 { @apply font-display text-primary; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::selection { background: #ccff00; color: #000; }
+  :focus-visible { outline: 3px solid #ccff00; outline-offset: 3px; border-radius: 6px; }
+  [tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
+  h1[tabindex="-1"]:focus, h2[tabindex="-1"]:focus { outline: none; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-wrap px-5 sm:px-8; }
+  .eyebrow { @apply font-mono text-[13px] font-medium uppercase tracking-[0.14em] text-electric-lime; }
+  .h-display { @apply font-display font-extrabold tracking-[-0.03em] leading-[1.05]; font-size: clamp(2.35rem, 6.2vw, 4.6rem); }
+  .h-section { @apply font-display font-extrabold tracking-[-0.02em] leading-[1.15]; font-size: clamp(1.75rem, 3.6vw, 2.75rem); }
+  .lead { @apply text-on-surface-variant; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; }
+  .section { @apply py-16 sm:py-24; }
+  .card { @apply rounded-2xl border border-border-subtle bg-graphite-grey; }
+
+  .btn { @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3 font-display text-[15px] font-bold tracking-[0.01em] transition-[transform,background-color,color,border-color,box-shadow] duration-200 ease-out-expo active:scale-[0.97]; }
+  .btn-primary { @apply btn bg-electric-lime text-onyx-black hover:shadow-[0_0_28px_rgba(204,255,0,0.35)]; }
+  .btn-ghost { @apply btn border border-white/25 text-primary hover:border-electric-lime hover:text-electric-lime; }
+  .btn-sm { @apply min-h-[44px] px-5 py-2 text-[14px]; }
+  .link { @apply font-semibold text-electric-lime underline decoration-electric-lime/40 underline-offset-4 transition-colors hover:decoration-electric-lime; }
+  .chip { @apply inline-flex items-center rounded-full border border-border-subtle bg-white/[0.04] px-3 py-1 font-mono text-[12px] font-medium text-on-surface; }
+  .placeholder-mark { @apply rounded border border-dashed border-onyx-black bg-electric-lime px-1.5 py-0.5 font-mono text-[0.85em] font-medium text-onyx-black; }
+}
+
+/* Skip link */
+.skip-link { position: absolute; left: 1rem; top: -100px; z-index: 100; background: #ccff00; color: #000; font-weight: 700; padding: .75rem 1.25rem; border-radius: 999px; }
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Kinetic hero headline (CSS, so it paints from the prerendered HTML without waiting for JS) ---------- */
+.kin-mask { display: inline-block; vertical-align: top; }
+.kin-word { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .kin-mask { overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; }
+  .kin-word { animation: kin-up .65s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(60ms + var(--i, 0) * 45ms); }
+}
+@keyframes kin-up { from { transform: translate3d(0, 105%, 0); } to { transform: none; } }
+
+/* ---------- Work cards ---------- */
+.spotlight { background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(204, 255, 0, .13), transparent 45%); }
+.device-screen { container-type: size; }
+.device-shot { display: block; width: 100%; height: auto; will-change: transform; }
+@media (prefers-reduced-motion: no-preference) {
+  .device-shot { animation: shot-scroll 26s ease-in-out infinite; }
+  .work-card:hover .device-shot,
+  .work-card:focus-visible .device-shot,
+  .work-card:focus-within .device-shot,
+  [data-motion-paused="true"] .device-shot { animation-play-state: paused; }
+}
+@keyframes shot-scroll {
+  0%, 8% { transform: translate3d(0, 0, 0); }
+  46%, 54% { transform: translate3d(0, calc(-100% + 100cqh), 0); }
+  92%, 100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Native <details> marker */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+
+/* Safety net (review.md section 4): honour reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333535; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ccff00; }
