@@ -15,7 +15,7 @@ export function Component() {
     <>
       <Seo page="about" />
       <PageHeader eyebrow="About" title="From the factory floor to full stack">
-        <p>I&apos;m John Michael Lagumbay, a web developer in Mississauga with 18 years of process and quality work behind me.</p>
+        <p>I&apos;m John Michael Lagumbay, a full-stack web developer based in Mississauga, Ontario, with 18 years of process and quality work behind me.</p>
       </PageHeader>
 
       <section className="section" aria-labelledby="story-title">
@@ -41,7 +41,7 @@ export function Component() {
             <Reveal className="mt-6 space-y-5 text-[17px] leading-relaxed text-on-surface">
               <p>I didn&apos;t start out writing code. For 15 years at SYKES in the Philippines, I worked as a process engineer, finding where things went wrong and fixing them for good. Then I moved to California, first as a quality analyst at DigitalStorm and then as a process engineering supervisor at Tesla, where I coached a team of technicians on safety, quality and targets.</p>
               <p>All those years taught me one thing: people get frustrated when something is harder than it needs to be. Now I fix that on the web. I retrained as a full-stack developer, with a certificate from Uplift Code Camp and a Computer Programming diploma from Sheridan College, and I build websites and web apps.</p>
-              <p>Today I help Mississauga small businesses get online with simple, good-looking websites. I bring the same habits I learned on the production line to every project: a clear plan, checks at every step, and no loose ends.</p>
+              <p>Today I build websites and custom web apps for small businesses and founders, working remotely with clients across Canada and beyond. I also build my own products, like NestWillow. I bring the same habits I learned on the production line to every project: a clear plan, checks at every step, and no loose ends.</p>
             </Reveal>
             <Reveal className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/work" className="btn-primary">See my work <IconArrowRight size={18} stroke={2.2} aria-hidden="true" /></Link>
@@ -105,7 +105,7 @@ export function Component() {
         </div>
       </section>
 
-      <CtaBand title="Need a website for your business?" primary={{ to: "/services", label: "See packages and prices" }} phone={false} />
+      <CtaBand title="Need a website or web app?" primary={{ to: "/services", label: "See services and prices" }} phone={false} />
     </>
   );
 }

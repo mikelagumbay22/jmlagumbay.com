@@ -12,10 +12,10 @@ export default function Footer() {
       <div className="wrap grid gap-10 py-14 md:grid-cols-[1.4fr_1fr]">
         <div className="space-y-4">
           <p className="max-w-md text-on-surface">
-            <strong className="font-display font-extrabold text-primary">JM Lagumbay Website Design</strong>: simple, good-looking websites for Mississauga small businesses.
+            <strong className="font-display font-extrabold text-primary">JM Lagumbay</strong>: fast, modern websites and web apps for small businesses and founders.
           </p>
           <p className="text-on-surface-variant">
-            Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · {LOCATION}
+            Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · <span className="whitespace-nowrap">Based in {LOCATION}</span> · Working remotely with clients across Canada and beyond
           </p>
         </div>
         <nav aria-label="Footer">

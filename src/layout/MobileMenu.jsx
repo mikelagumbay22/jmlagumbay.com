@@ -126,7 +126,7 @@ export default function MobileMenu() {
                 ))}
               </m.ul>
               <div className="mt-10 flex flex-col gap-3">
-                <Link to="/contact" onClick={close} className="btn-primary">Get my website started</Link>
+                <Link to="/contact" onClick={close} className="btn-primary">Start your project</Link>
                 <a href={PHONE_HREF} className="btn-ghost">
                   <IconPhone size={18} stroke={2} aria-hidden="true" />
                   Call or text {PHONE_DISPLAY}

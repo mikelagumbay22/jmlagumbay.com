@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import DemoCard from "@/components/DemoCard";
 import PreviewPauseButton from "@/components/PreviewPauseButton";
 import ProjectCard from "@/components/ProjectCard";
+import NestWillowFeature from "@/components/NestWillowFeature";
 import CtaBand from "@/components/CtaBand";
 import { DEMOS, PROJECTS, FILTERS } from "@/data/work";
 import { GITHUB_URL } from "@/data/site";
@@ -24,46 +25,61 @@ const item = {
 export function Component() {
   const [filter, setFilter] = useState("all");
   const [paused, setPaused] = useState(false);
+  // NestWillow is first under All, and also under Live product and Web apps (copy.md filter mapping).
+  const showNest = filter === "all" || filter === "live" || filter === "web";
   const showDemos = filter === "all" || filter === "demo";
+  const showProjects = filter !== "demo" && filter !== "live";
   const projects = PROJECTS.filter((p) => filter === "all" || p.category === filter);
-  const count = (showDemos ? DEMOS.length : 0) + (filter === "demo" ? 0 : projects.length);
+  const count = (showNest ? 1 : 0) + (showDemos ? DEMOS.length : 0) + (showProjects ? projects.length : 0);
 
   return (
     <>
       <Seo page="work" />
       <PageHeader eyebrow="Work" title="My work">
-        <p>Demo websites for local businesses first, then the web and machine-learning projects I&apos;ve built along the way.</p>
+        <p>My own live web app first, then demo websites for local businesses, then the web and machine-learning projects I&apos;ve built along the way.</p>
       </PageHeader>
 
       <div className="wrap pt-10">
-        <div role="group" aria-label="Filter work" className="flex flex-wrap gap-2">
-          {FILTERS.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              aria-pressed={filter === f.id}
-              onClick={() => setFilter(f.id)}
-              className={`relative min-h-[44px] rounded-full border px-5 font-display text-[14px] font-bold transition-colors ${
-                filter === f.id ? "border-electric-lime text-onyx-black" : "border-border-subtle text-on-surface hover:border-electric-lime hover:text-electric-lime"
-              }`}
-            >
-              {filter === f.id && <m.span layoutId="filter-pill" aria-hidden="true" className="absolute inset-0 rounded-full bg-electric-lime" transition={{ type: "spring", stiffness: 520, damping: 42 }} />}
-              <span className="relative">{f.label}</span>
-            </button>
-          ))}
+        {/* Below lg the chips sit in one row that scrolls sideways, so the row's height can't change when the
+            web font swaps in (with 6 chips the wrapped row jumped from 2 to 3 lines: a layout shift). */}
+        <div className="-mx-5 -my-2 overflow-x-auto px-5 py-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:overflow-visible lg:px-0">
+          <div role="group" aria-label="Filter work" className="flex w-max gap-2 lg:w-auto lg:flex-wrap">
+            {FILTERS.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                aria-pressed={filter === f.id}
+                onClick={() => setFilter(f.id)}
+                className={`relative min-h-[44px] rounded-full border px-5 font-display text-[14px] font-bold transition-colors ${
+                  filter === f.id ? "border-electric-lime text-onyx-black" : "border-border-subtle text-on-surface hover:border-electric-lime hover:text-electric-lime"
+                }`}
+              >
+                {filter === f.id && <m.span layoutId="filter-pill" aria-hidden="true" className="absolute inset-0 rounded-full bg-electric-lime" transition={{ type: "spring", stiffness: 520, damping: 42 }} />}
+                <span className="relative">{f.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
         <p className="sr-only" aria-live="polite">{`Showing ${count} ${count === 1 ? "item" : "items"}`}</p>
       </div>
 
       <AnimatePresence initial={false} mode="popLayout">
+        {showNest && (
+          <m.section key="nestwillow" {...item} id="nestwillow" className="section pb-8 sm:pb-12" aria-labelledby="nestwillow-title">
+            <div className="wrap">
+              <Reveal><NestWillowFeature /></Reveal>
+            </div>
+          </m.section>
+        )}
+
         {showDemos && (
-          <m.section key="demos" {...item} className="section pb-8 sm:pb-12" aria-labelledby="demo-sites-title" data-motion-paused={paused}>
+          <m.section key="demos" {...item} className={`section pb-8 sm:pb-12 ${showNest ? "pt-8 sm:pt-12" : ""}`} aria-labelledby="demo-sites-title" data-motion-paused={paused}>
             <div className="wrap">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <Reveal className="max-w-3xl">
                   <h2 id="demo-sites-title" className="h-section">Demo sites</h2>
                   <p className="lead mt-4">
-                    I built these demo concepts to show local owners what their site could look like. The businesses are real Mississauga shops, but <strong className="text-primary">they didn&apos;t hire me</strong> and these aren&apos;t their official websites.
+                    I built these demo concepts to show local business owners what their site could look like. The businesses are real, but <strong className="text-primary">they didn&apos;t hire me</strong> and these aren&apos;t their official websites.
                   </p>
                 </Reveal>
                 <PreviewPauseButton paused={paused} onToggle={() => setPaused((v) => !v)} />
@@ -83,7 +99,7 @@ export function Component() {
           </m.section>
         )}
 
-        {filter !== "demo" && (
+        {showProjects && (
           <m.section key="projects" {...item} className="section pt-8 sm:pt-12" aria-labelledby="projects-title">
             <div className="wrap">
               <Reveal className="max-w-3xl">
@@ -108,7 +124,7 @@ export function Component() {
         )}
       </AnimatePresence>
 
-      <CtaBand title="Like what you see?" text="Your business could be next. Let's talk about what your website needs." phone={false} />
+      <CtaBand title="Like what you see?" text="Your website or app could be next. Let's talk about what you need." phone={false} />
     </>
   );
 }

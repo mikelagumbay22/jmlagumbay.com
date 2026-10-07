@@ -1,47 +1,49 @@
-// Per-page <title>, meta description and share text, word for word from copy.md Part B.
+// Per-page <title>, meta description and share text, word for word from copy.md Part B (Oct 7 reposition).
 export const SEO = {
   home: {
     path: "/",
-    title: "Websites for Mississauga Small Businesses | JM Lagumbay",
+    title: "Websites & Web Apps for Small Businesses | JM Lagumbay",
     description:
-      "Fast, modern websites for Mississauga salons, auto shops, bakeries and cleaners. One price, paid once, ready in days. Call or text (647) 633-7623.",
-    ogTitle: "JM Lagumbay: Websites for Mississauga Small Businesses",
+      "Fast, modern websites and custom web apps for small businesses and founders. Website packages from $499, paid once. I work remotely across Canada and beyond.",
+    ogTitle: "JM Lagumbay: Websites & Web Apps for Small Businesses",
     ogDescription:
-      "Simple, good-looking websites for local salons, auto shops, bakeries and cleaners. One price, paid once. Call or text (647) 633-7623.",
+      "Fast, modern websites and custom web apps for small businesses and founders, anywhere. Website packages from $499, paid once. Web apps by fixed quote.",
   },
   services: {
     path: "/services",
-    title: "Website Packages & Prices in Mississauga | JM Lagumbay",
+    title: "Website Packages & Custom Web Apps | JM Lagumbay",
     description:
-      "Website packages from $499, paid once: phone-friendly design, your own web address, Google Maps and reviews. Care plans from $29 a month. Ready in days.",
-    ogTitle: "Website Packages & Prices | JM Lagumbay",
+      "Website packages from $499 (launch price), paid once, plus care plans from $29 a month. Need more? Custom web apps with a fixed quote. Remote, Canada-wide.",
+    ogTitle: "Website Packages & Custom Web Apps | JM Lagumbay",
     ogDescription:
-      "Three packages from $499, paid once, plus optional care from $29 a month. Plain prices, no surprises.",
+      "Website packages from $499 (launch price), paid once, plus care from $29 a month. Custom web apps by fixed quote.",
   },
   work: {
     path: "/work",
-    title: "Website Demos & Projects | JM Lagumbay, Mississauga",
+    title: "NestWillow, Demo Sites & Projects | JM Lagumbay",
     description:
-      "Five demo websites I built to show local salons, bakeries, auto shops and cleaners what's possible, plus my full-stack web and machine-learning projects.",
-    ogTitle: "Demo Websites & Projects | JM Lagumbay",
-    ogDescription: "Five demo websites for local businesses, plus my web and machine-learning projects.",
+      "See NestWillow, my live property-management web app, plus demo websites for salons, bakeries, auto shops and cleaners, and my web and ML projects.",
+    ogTitle: "NestWillow, Demo Sites & Projects | JM Lagumbay",
+    ogDescription:
+      "My live web app NestWillow, five demo websites for local businesses, and my web and machine-learning projects.",
   },
   about: {
     path: "/about",
-    title: "About JM Lagumbay | Web Developer in Mississauga, ON",
+    title: "About JM Lagumbay | Full-Stack Web Developer, Canada",
     description:
       "From 18 years of process and quality work at Tesla, SYKES and DigitalStorm to full-stack developer. My story, experience, education, skills and resume.",
     ogTitle: "About JM Lagumbay",
     ogDescription:
-      "From process and quality work at Tesla, SYKES and DigitalStorm to building websites in Mississauga.",
+      "From process and quality work at Tesla, SYKES and DigitalStorm to building websites and web apps for clients anywhere.",
   },
   contact: {
     path: "/contact",
-    title: "Contact JM Lagumbay | Website Design in Mississauga",
+    title: "Contact JM Lagumbay | Start Your Website or Web App",
     description:
-      "Tell me about your business and what your website needs. Call or text (647) 633-7623, or send the quick form. I'm based right here in Mississauga, ON.",
-    ogTitle: "Let's Talk About Your Website | JM Lagumbay",
-    ogDescription: "Call or text (647) 633-7623, or send a quick message. Mississauga, ON.",
+      "Tell me what you need, a website or a custom web app. Call or text (647) 633-7623, email me or send the quick form. I work remotely with clients anywhere.",
+    ogTitle: "Let's Talk About Your Project | JM Lagumbay",
+    ogDescription:
+      "A website or a custom web app? Call or text (647) 633-7623, or send a quick message. I work remotely with clients anywhere.",
   },
   notFound: {
     path: "/404",

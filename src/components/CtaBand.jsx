@@ -3,7 +3,7 @@ import { IconPhone, IconArrowRight } from "@tabler/icons-react";
 import Reveal from "./Reveal";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
-export default function CtaBand({ title, text, primary = { to: "/contact", label: "Tell me about your business" }, phone = true }) {
+export default function CtaBand({ title, text, primary = { to: "/contact", label: "Start your project" }, phone = true }) {
   return (
     <section className="section" aria-labelledby="cta-title">
       <div className="wrap">

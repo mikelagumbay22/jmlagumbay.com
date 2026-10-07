@@ -11,11 +11,12 @@ const NEEDS = [
   { value: "starter", label: "A new website: Starter" },
   { value: "business", label: "A new website: Business" },
   { value: "premium", label: "A new website: Premium" },
+  { value: "webapp", label: "A custom web app" },
   { value: "existing", label: "Help with an existing website" },
   { value: "care", label: "Care Plan only" },
   { value: "unsure", label: "Not sure yet, please recommend one" },
 ];
-const PRESELECT = new Set(["starter", "business", "premium"]); // ?need= values (anything else is ignored)
+const PRESELECT = new Set(["starter", "business", "premium", "webapp"]); // ?need= values (anything else is ignored)
 const EMPTY = { name: "", business: "", phone: "", email: "", need: "", message: "" };
 
 function validate(f) {
@@ -25,8 +26,11 @@ function validate(f) {
   if (!phone && !email) e.contact = "Please add a phone number or an email so I can reply.";
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) e.email = "Please check your email address (for example, you@example.com).";
   if (phone) {
+    // North American numbers need all 10 digits (optionally with a leading 1); international numbers
+    // (clients outside Canada) may have up to 15 digits (E.164), or 8+ when written with a leading "+".
     const d = phone.replace(/\D/g, "");
-    if (!(d.length === 10 || (d.length === 11 && d.startsWith("1")))) e.phone = "Please enter a 10-digit phone number.";
+    const ok = /^\+/.test(phone) ? d.length >= 8 && d.length <= 15 : d.length >= 10 && d.length <= 15;
+    if (!ok || /[^\d\s()+.-]/.test(phone)) e.phone = "Please enter a valid phone number, including the area code.";
   }
   if (!f.need) e.need = "Please choose what you need. \u201cNot sure yet\u201d is fine.";
   return e;
@@ -160,7 +164,7 @@ export default function ContactForm() {
           <input id="name" name="name" type="text" autoComplete="name" placeholder="e.g. Maria Santos" required aria-required="true"
             aria-invalid={!!errors.name} aria-describedby={desc("name")} value={form.name} onChange={set("name")} disabled={sending} className={inputCls(errors.name)} />
         </Field>
-        <Field id="business" label="Business name" optional>
+        <Field id="business" label="Business or project name" optional>
           <input id="business" name="business" type="text" autoComplete="organization" placeholder="e.g. Maria's Bakery"
             value={form.business} onChange={set("business")} disabled={sending} className={inputCls(false)} />
         </Field>
@@ -190,7 +194,7 @@ export default function ContactForm() {
         </select>
       </Field>
       <Field id="message" label="Message" optional>
-        <textarea id="message" name="message" rows={5} placeholder="Tell me about your business and what you'd like your website to do."
+        <textarea id="message" name="message" rows={5} placeholder="Tell me about your business or idea, and what you'd like your website or app to do."
           value={form.message} onChange={set("message")} disabled={sending} className={`${inputCls(false)} resize-y`} />
       </Field>
       {errCount > 0 && (

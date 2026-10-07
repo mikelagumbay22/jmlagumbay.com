@@ -3,7 +3,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
-import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, REMOTE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" };
 
@@ -26,8 +26,8 @@ export function Component() {
   return (
     <>
       <Seo page="contact" />
-      <PageHeader eyebrow="Contact" title="Let's talk about your website">
-        <p>Tell me a bit about your business and what you need. I&apos;ll get back to you with the next steps.</p>
+      <PageHeader eyebrow="Contact" title="Let's talk about your project">
+        <p>Tell me a bit about your business or idea and what you need, a website or a custom web app. I&apos;ll get back to you with the next steps.</p>
       </PageHeader>
       <section className="section" aria-label="Contact details and form">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -35,7 +35,7 @@ export function Component() {
             <ul className="space-y-7">
               <Row icon={IconPhone} label="Call or text"><a href={PHONE_HREF} className={linkCls}>{PHONE_DISPLAY}</a></Row>
               <Row icon={IconMail} label="Email"><a href={`mailto:${EMAIL}`} className={`${linkCls} [overflow-wrap:anywhere]`}>{EMAIL}</a></Row>
-              <Row icon={IconMapPin} label="Based in"><span>{LOCATION}</span></Row>
+              <Row icon={IconMapPin} label="Based in"><span>{LOCATION} · {REMOTE}</span></Row>
               <Row icon={IconBrandLinkedin} label="Online">
                 <span className="flex flex-wrap gap-x-5">
                   <a href={LINKEDIN_URL} {...ext} className={linkCls}>LinkedIn<span className="sr-only"> (opens in a new tab)</span></a>

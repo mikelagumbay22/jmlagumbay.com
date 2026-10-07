@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { IconCheck, IconArrowRight, IconChevronDown } from "@tabler/icons-react";
+import { IconCheck, IconArrowRight, IconChevronDown, IconAppWindow } from "@tabler/icons-react";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
-import { PACKAGES, CARE, STEPS, HANDOVER } from "@/data/services";
+import { PACKAGES, CARE, STEPS, HANDOVER, WEB_APPS } from "@/data/services";
 
 // Reads exactly: "Launch pricing ends December 31, 2026. From January 1, 2027: $699 / $1,199 / $1,799 (handover $150)."
 // The spans only control where it wraps (each sentence, and the price list, stays in one piece).
@@ -31,12 +31,15 @@ function Regular({ value, className = "" }) {
 const FAQ = [
   { q: "Do I own my website?", a: <>Yes. The web address is in your name, and the site is yours once it&apos;s paid in full.</> },
   { q: "What if I already have a web address?", a: <>No problem. We can use the one you already have.</> },
-  { q: "How long does it take?", a: <>3–14 business days, depending on the package: Starter 3–5, Business 7–10, Premium 10–14. The clock starts when I have your deposit, photos and info.</> },
-  { q: "What do you need from me?", a: <>A quick 20-minute chat, your photos, your business info (hours, services, address) and the 50% deposit. I write the words for you.</> },
+  { q: "How long does a website take?", a: <>3–14 business days, depending on the package: Starter 3–5, Business 7–10, Premium 10–14. The clock starts when I have your deposit, photos and info.</> },
+  { q: "What do you need from me?", a: <>For a website: a quick 20-minute chat, your photos, your business info (hours, services, address) and the 50% deposit. I write the words for you.</> },
+  { q: "Do you work with clients outside your area?", a: <>Yes. I work remotely with small businesses and founders across Canada and beyond, mostly by phone and email. The one exception is the Premium photo visit, which is in person and only in Mississauga, Ontario, where I&apos;m based.</> },
   { q: "What if I need changes later?", a: <>With a Care Plan, small changes are included: 1 a month on Starter, up to 3 a month on Business, up to 2 hours a month on Premium. Without one, later changes are $50&nbsp;an hour (1-hour minimum).</> },
   { q: "What happens after the first year?", a: <>Your first year of web address is included. After that, either the Care Plan keeps everything running and renewed, or you pay one yearly fee ($49 / $99 / $149 per year for Starter / Business / Premium). If you&apos;d rather run it yourself, choose the full handover.</> },
-  { q: "How do I pay? Is there HST?", a: <>50% to start and 50% when your site is ready, before it goes live, by Interac e-Transfer. Prices are in Canadian dollars, and no HST is charged.</> },
-  { q: "Can I see an example?", a: <>Yes! I can show you live sample websites right now. <Link to="/work" className="link">See my demo sites</Link></> },
+  { q: "How much does a custom web app cost?", a: <>Every app is different. Tell me what you need and I&apos;ll send a fixed quote.</> },
+  { q: "What do you build web apps with?", a: <>React, Node, Java/Spring and Python. You can see the tools I use on my <Link to="/about" className="link">About page</Link>.</> },
+  { q: "How do I pay? Is there HST?", a: <>For website packages: 50% to start and 50% when your site is ready, before it goes live, by Interac e-Transfer. Prices are in Canadian dollars, and no HST is charged.</> },
+  { q: "Can I see an example?", a: <>Yes! Try NestWillow, my own live web app, or my demo websites. <Link to="/work" className="link">See my work</Link></> },
 ];
 
 function PackageCard({ p }) {
@@ -77,14 +80,14 @@ export function Component() {
   return (
     <>
       <Seo page="services" />
-      <PageHeader eyebrow="Services" title="Websites for Mississauga small businesses">
-        <p>One price, paid once. Your website, your own web address, ready to show customers.</p>
+      <PageHeader eyebrow="Services" title="Websites and web apps for small businesses and founders">
+        <p>Website packages at one price, paid once, ready in days. Custom web apps by fixed quote. I work remotely with clients across Canada and beyond.</p>
       </PageHeader>
 
       <section className="section" aria-labelledby="packages-title">
         <div className="wrap">
           <Reveal className="max-w-4xl">
-            <h2 id="packages-title" className="h-section">Pick your package</h2>
+            <h2 id="packages-title" className="h-section">Pick your website package</h2>
             <p className="lead mt-4">All prices are one-time, in Canadian dollars. No HST charged.</p>
             <LaunchEndLine />
           </Reveal>
@@ -100,9 +103,47 @@ export function Component() {
         </div>
       </section>
 
+      <section id="web-apps" className="section border-t border-border-subtle" aria-labelledby="web-apps-title">
+        <div className="wrap grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
+          <div className="min-w-0">
+            <Reveal className="max-w-3xl">
+              <h2 id="web-apps-title" className="h-section">Custom web apps</h2>
+              <p className="lead mt-4">Need more than a website? I build web apps that run part of your business, or the first version of your product.</p>
+            </Reveal>
+            <Reveal as="ul" className="mt-8 grid gap-4 sm:grid-cols-2">
+              {WEB_APPS.map((w) => (
+                <li key={w.title} className="card p-5">
+                  <h3 className="text-lg font-extrabold leading-snug">{w.title}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-on-surface-variant">{w.text}</p>
+                </li>
+              ))}
+            </Reveal>
+            <Reveal className="mt-8 space-y-3 text-on-surface">
+              <p><strong className="text-primary">Built with:</strong> React, Node, Java/Spring and Python, the same tools I use for my own projects.</p>
+              <p>
+                <strong className="text-primary">See one live:</strong>{" "}
+                <Link to="/work#nestwillow" className="link">NestWillow, my own property-management app</Link>
+              </p>
+            </Reveal>
+          </div>
+          <Reveal className="min-w-0 rounded-3xl border-2 border-electric-lime/60 bg-graphite-grey p-7 sm:p-8 lg:sticky lg:top-28" delay={0.08}>
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-electric-lime text-onyx-black">
+              <IconAppWindow size={26} stroke={1.8} aria-hidden="true" />
+            </span>
+            <p className="mt-5 font-mono text-[12.5px] font-medium uppercase tracking-[0.12em] text-electric-lime">Price</p>
+            <p className="mt-1 font-display text-4xl font-extrabold tracking-tight text-primary">Custom quote</p>
+            <p className="mt-3 leading-relaxed text-on-surface-variant">Every app is different. Tell me what you need and I&apos;ll send a fixed quote.</p>
+            <Link to="/contact?need=webapp" className="btn-primary mt-7 w-full">
+              Tell me about your app <IconArrowRight size={18} stroke={2.2} aria-hidden="true" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section border-y border-border-subtle bg-graphite-grey/60" aria-labelledby="care-title">
         <div className="wrap">
           <Reveal className="max-w-3xl">
+            <p className="eyebrow mb-3">For website packages</p>
             <h2 id="care-title" className="h-section">Care Plan: optional, month to month, cancel anytime</h2>
             <p className="lead mt-4">I keep your site running, safe and up to date, renew your web address, and make small changes for you (new hours, prices, photos).</p>
           </Reveal>
@@ -191,7 +232,7 @@ export function Component() {
 
       <section className="section border-t border-border-subtle" aria-labelledby="faq-title">
         <div className="wrap max-w-4xl">
-          <Reveal><h2 id="faq-title" className="h-section">Questions owners ask</h2></Reveal>
+          <Reveal><h2 id="faq-title" className="h-section">Questions clients ask</h2></Reveal>
           <div className="mt-10 divide-y divide-border-subtle rounded-2xl border border-border-subtle">
             {FAQ.map(({ q, a }) => (
               <details key={q} className="group px-6">
@@ -206,7 +247,7 @@ export function Component() {
         </div>
       </section>
 
-      <CtaBand title="Not sure which package fits?" text="Tell me what your business does and I'll recommend one. It takes two minutes." />
+      <CtaBand title="Not sure what you need?" text="Tell me what your business does or what you want to build, and I'll recommend a package or send a fixed quote." />
     </>
   );
 }

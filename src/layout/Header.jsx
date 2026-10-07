@@ -39,7 +39,7 @@ export default function Header() {
           </ul>
         </nav>
         <Link to="/contact" className="btn-primary btn-sm hidden lg:inline-flex">
-          Get my website started
+          Start your project
         </Link>
         <MobileMenu />
       </div>

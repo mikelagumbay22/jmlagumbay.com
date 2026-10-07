@@ -2,11 +2,39 @@
 // demo sites by ../qa/capture_demos.py (720 px wide, tall strips for the auto-scrolling device frame).
 export const DEMO_LABEL = "Demo concept, not a real client";
 
+// NestWillow: John's own live web app, the top featured project on Home and Work (copy.md Page 1 + Page 3,
+// Oct 7 reposition). All product wording is verbatim from the public landing page https://nestwillow.app/.
+// Images: captured from the public landing page only (../assets-src/nestwillow/). The landing page is a
+// single short screen, so its device-frame strip is shown still (no auto-scroll).
+export const NESTWILLOW = {
+  slug: "nestwillow",
+  title: "NestWillow",
+  label: "Live product \u00b7 built by me",
+  tagline: "Property management that feels calm.",
+  url: "https://nestwillow.app/",
+  homeBlurb: "A live web app I built. NestWillow connects landlords with their renters \u2014 leases, rent, maintenance, documents and messages in one private workspace.",
+  intro: "A live web app I designed and built. NestWillow connects landlords with their renters \u2014 leases, rent, maintenance, documents and messages in one private workspace.",
+  features: [
+    { title: "Your portfolio", text: "Properties, units and lease terms, organised." },
+    { title: "Rent collection", text: "Card payments and manual records with clear statuses." },
+    { title: "Maintenance", text: "Renters report issues; you track them to done." },
+    { title: "Private by design", text: "Each account\u2019s data is isolated \u2014 always." },
+  ],
+  builtWith: [
+    "React 19", "Vite", "TanStack Router (server-rendered)", "TanStack Query", "Tailwind CSS v4",
+    "Supabase (backend and sign-in)", "Stripe (card payments)", "Cloudflare (hosting)",
+  ],
+  homeTags: ["React 19", "Supabase", "Stripe"],
+  alt: "NestWillow landing page: Property management that feels calm.",
+  image: { src: "/img/projects/nestwillow.webp", w: 512, h: 286 },
+  shot: { src: "/img/work/nestwillow.webp", w: 720, h: 490 },
+};
+
 export const DEMOS = [
   {
     slug: "9-natural-nails",
     title: "9 Natural Nails & Spa",
-    meta: "Nail salon and spa · Creditview, Mississauga",
+    meta: "Nail salon and spa",
     text: "A 5-page salon site with Home, Services, About, Reviews and Contact pages. It shows a sample services menu, client reviews, hours, a map, tap-to-call and a \u201cBook Now\u201d button.",
     url: "https://mikelagumbay22.github.io/9-natural-nails-demo/",
     shot: { src: "/img/work/9-natural-nails.webp", w: 720, h: 2335 },
@@ -14,7 +42,7 @@ export const DEMOS = [
   {
     slug: "nannus-pastizzi",
     title: "Nannu's Pastizzi",
-    meta: "Maltese bakery · Meadowvale, Mississauga",
+    meta: "Maltese bakery",
     text: "A 5-page bakery site with Home, Menu, About, Reviews and Visit pages. It has a full menu from pastizzi to Maltese sweets, the family story, directions and hours, plus order-ahead and catering info.",
     url: "https://mikelagumbay22.github.io/nannus-pastizzi-demo/",
     shot: { src: "/img/work/nannus-pastizzi.webp", w: 720, h: 2588 },
@@ -22,7 +50,7 @@ export const DEMOS = [
   {
     slug: "best-auto-repair",
     title: "Best Auto Repair Service",
-    meta: "Auto repair shop · Mavis-Erindale, Mississauga",
+    meta: "Auto repair shop",
     text: "A 5-page garage site with Home, Services, About, Reviews and Contact pages. It covers everyday repairs, a DriveON inspection centre section, customer reviews, hours and directions, with tap-to-call throughout.",
     url: "https://mikelagumbay22.github.io/best-auto-repair-demo/",
     shot: { src: "/img/work/best-auto-repair.webp", w: 720, h: 2135 },
@@ -30,7 +58,7 @@ export const DEMOS = [
   {
     slug: "red-hat-cleaners",
     title: "Red Hat Cleaners",
-    meta: "Alterations and dry cleaning · Meadowvale Village, Mississauga",
+    meta: "Alterations and dry cleaning",
     text: "A 5-page site with Home, Services, About, Reviews and Contact pages. It has a bridal and South Asian alterations section, tailoring and dry cleaning, space for a before-and-after gallery, hours, a map and tap-to-call.",
     url: "https://mikelagumbay22.github.io/red-hat-cleaners-demo/",
     shot: { src: "/img/work/red-hat-cleaners.webp", w: 720, h: 2188 },
@@ -38,7 +66,7 @@ export const DEMOS = [
   {
     slug: "escape-studio",
     title: "Escape Studio Hair & Spa",
-    meta: "Hair salon and spa · Applewood, Mississauga",
+    meta: "Hair salon and spa",
     text: "A 5-page salon site with Home, Services, Team, Reviews and Contact pages. It has colour and colour-correction services, space for a colour gallery, the stylists and their specialties on a Meet the Team page, reviews, and booking by phone.",
     url: "https://mikelagumbay22.github.io/escape-studio-demo/",
     shot: { src: "/img/work/escape-studio.webp", w: 720, h: 2588 },
@@ -50,6 +78,7 @@ export const FEATURED_DEMOS = ["9-natural-nails", "nannus-pastizzi", "best-auto-
 const WAKE = "Free server: may take up to a minute to wake up.";
 
 // category: web | ml | games. BUDDIE.PH and PARKRIDGE sit at the end (copy.md builder note).
+// NestWillow (above) shows under All, Live product and Web apps, always first.
 export const PROJECTS = [
   {
     title: "GAMERS.PH",
@@ -145,6 +174,7 @@ export const PROJECTS = [
 
 export const FILTERS = [
   { id: "all", label: "All" },
+  { id: "live", label: "Live product" },
   { id: "demo", label: "Demo sites" },
   { id: "web", label: "Web apps" },
   { id: "ml", label: "Machine learning" },
