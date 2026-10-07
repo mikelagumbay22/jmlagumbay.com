@@ -43,9 +43,9 @@ export const EDUCATION = [
 
 export const TECH = [
   { group: "Languages", items: ["JavaScript", "TypeScript", "Java", "Python", "C#", "SQL", "HTML5", "CSS3"] },
-  { group: "Frontend", items: ["React", "Tailwind CSS", "Bootstrap", "Thymeleaf"] },
-  { group: "Backend", items: ["Node.js", "Express", "Spring Boot", "Flask", "REST APIs"] },
+  { group: "Frontend", items: ["React", "Tailwind CSS", "TanStack Router", "TanStack Query", "Bootstrap", "Thymeleaf"] },
+  { group: "Backend", items: ["Node.js", "Express", "Spring Boot", "Flask", "REST APIs", "Supabase", "Stripe"] },
   { group: "Data & ML", items: ["scikit-learn", "TensorFlow/Keras", "pandas", "NumPy"] },
   { group: "Databases", items: ["MongoDB", "PostgreSQL", "H2", "Entity Framework"] },
-  { group: "Tools", items: ["Git/GitHub", "Docker", "Render", "Maven/Gradle", "IntelliJ IDEA", "Visual Studio"] },
+  { group: "Tools", items: ["Git/GitHub", "Docker", "Vite", "Render", "Cloudflare", "Maven/Gradle", "IntelliJ IDEA", "Visual Studio"] },
 ];

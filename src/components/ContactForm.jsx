@@ -30,7 +30,8 @@ function validate(f) {
     // (clients outside Canada) may have up to 15 digits (E.164), or 8+ when written with a leading "+".
     const d = phone.replace(/\D/g, "");
     const ok = /^\+/.test(phone) ? d.length >= 8 && d.length <= 15 : d.length >= 10 && d.length <= 15;
-    if (!ok || /[^\d\s()+.-]/.test(phone)) e.phone = "Please enter a valid phone number, including the area code.";
+    // Only digits, spaces, ( ) . - and at most ONE leading "+" (rejects "++1 647…" and "647+633+7623").
+    if (!ok || !/^\+?[\d\s().-]+$/.test(phone)) e.phone = "Please enter a valid phone number, including the country or area code.";
   }
   if (!f.need) e.need = "Please choose what you need. \u201cNot sure yet\u201d is fine.";
   return e;
@@ -104,7 +105,7 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `Website enquiry from ${form.name.trim()}${form.business.trim() ? ` (${form.business.trim()})` : ""}`,
+          subject: `New enquiry from ${form.name.trim()}${form.business.trim() ? ` (${form.business.trim()})` : ""}`,
           from_name: "jmlagumbay.com contact form",
           name: form.name.trim(),
           business: form.business.trim(),

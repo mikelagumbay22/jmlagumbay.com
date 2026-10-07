@@ -119,7 +119,7 @@ export function Component() {
               ))}
             </Reveal>
             <Reveal className="mt-8 space-y-3 text-on-surface">
-              <p><strong className="text-primary">Built with:</strong> React, Node, Java/Spring and Python, the same tools I use for my own projects.</p>
+              <p><strong className="text-primary">Built with:</strong> React, Node, Java/Spring and Python.</p>
               <p>
                 <strong className="text-primary">See one live:</strong>{" "}
                 <Link to="/work#nestwillow" className="link">NestWillow, my own property-management app</Link>

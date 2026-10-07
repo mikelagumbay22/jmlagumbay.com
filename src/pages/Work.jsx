@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, m } from "motion/react";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
@@ -25,6 +25,18 @@ const item = {
 export function Component() {
   const [filter, setFilter] = useState("all");
   const [paused, setPaused] = useState(false);
+  // Filter row below lg: a right-edge fade hints at more chips; it goes away once the row is scrolled to the end.
+  const rowRef = useRef(null);
+  const [rowAtEnd, setRowAtEnd] = useState(false);
+  const checkRowEnd = useCallback(() => {
+    const el = rowRef.current;
+    if (el) setRowAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 2);
+  }, []);
+  useEffect(() => {
+    checkRowEnd();
+    window.addEventListener("resize", checkRowEnd);
+    return () => window.removeEventListener("resize", checkRowEnd);
+  }, [checkRowEnd]);
   // NestWillow is first under All, and also under Live product and Web apps (copy.md filter mapping).
   const showNest = filter === "all" || filter === "live" || filter === "web";
   const showDemos = filter === "all" || filter === "demo";
@@ -41,8 +53,16 @@ export function Component() {
 
       <div className="wrap pt-10">
         {/* Below lg the chips sit in one row that scrolls sideways, so the row's height can't change when the
-            web font swaps in (with 6 chips the wrapped row jumped from 2 to 3 lines: a layout shift). */}
-        <div className="-mx-5 -my-2 overflow-x-auto px-5 py-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:overflow-visible lg:px-0">
+            web font swaps in (with 6 chips the wrapped row jumped from 2 to 3 lines: a layout shift).
+            Scroll padding: left matches the page gutter; right equals the 15% fade, so a focused chip that is
+            scrolled into view always sits clear of the fade. */}
+        <div
+          ref={rowRef}
+          onScroll={checkRowEnd}
+          className={`-mx-5 -my-2 overflow-x-auto scroll-pl-5 scroll-pr-[15%] px-5 py-2 sm:-mx-8 sm:scroll-pl-8 sm:px-8 lg:mx-0 lg:overflow-visible lg:px-0 lg:[mask-image:none] ${
+            rowAtEnd ? "" : "[mask-image:linear-gradient(to_right,#000_85%,transparent)]"
+          }`}
+        >
           <div role="group" aria-label="Filter work" className="flex w-max gap-2 lg:w-auto lg:flex-wrap">
             {FILTERS.map((f) => (
               <button
@@ -50,6 +70,8 @@ export function Component() {
                 type="button"
                 aria-pressed={filter === f.id}
                 onClick={() => setFilter(f.id)}
+                // Chrome only scrolls a focused element into view when it is fully hidden; this also handles partly visible chips.
+                onFocus={(e) => e.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" })}
                 className={`relative min-h-[44px] rounded-full border px-5 font-display text-[14px] font-bold transition-colors ${
                   filter === f.id ? "border-electric-lime text-onyx-black" : "border-border-subtle text-on-surface hover:border-electric-lime hover:text-electric-lime"
                 }`}
