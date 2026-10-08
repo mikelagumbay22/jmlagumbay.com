@@ -32,7 +32,7 @@ export const PACKAGES = [
     intro: "Everything in Starter, plus:",
     items: [
       "Custom layout and colours to match your business",
-      "Written with words people search for, like \u201chair salon near me\u201d",
+      "Written so you show up when people nearby search for what you offer",
       "Contact form for questions and quotes",
       "\u201cLeave us a Google review\u201d button",
       "I tidy up your logo and edit your photos",

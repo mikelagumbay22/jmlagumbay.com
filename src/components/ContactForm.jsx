@@ -168,7 +168,7 @@ export default function ContactForm() {
             aria-invalid={!!errors.name} aria-describedby={desc("name")} value={form.name} onChange={set("name")} disabled={sending} className={inputCls(errors.name)} />
         </Field>
         <Field id="business" label="Business or project name" optional>
-          <input id="business" name="business" type="text" autoComplete="organization" placeholder="e.g. Maria's Bakery"
+          <input id="business" name="business" type="text" autoComplete="organization" placeholder="e.g. Your Business Name"
             value={form.business} onChange={set("business")} disabled={sending} className={inputCls(false)} />
         </Field>
       </div>
