@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, REMOTE, PHONE_DISPLAY, PHONE_HREF, RESUME_URL, FULL_NAME } from "@/data/site";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, REMOTE, PHONE, PHONE_DISPLAY, PHONE_HREF, RESUME_URL, FULL_NAME } from "@/data/site";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" };
 
@@ -15,7 +15,8 @@ export default function Footer() {
             <strong className="font-display font-extrabold text-primary">JM Lagumbay</strong>: fast, modern websites and web apps for small businesses and founders.
           </p>
           <p className="text-on-surface-variant">
-            Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · <span className="whitespace-nowrap">Based in {LOCATION}</span> · {REMOTE}
+            {PHONE && <>Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · </>}
+            Email <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · <span className="whitespace-nowrap">Based in {LOCATION}</span> · {REMOTE}
           </p>
         </div>
         <nav aria-label="Footer">

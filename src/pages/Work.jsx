@@ -146,7 +146,7 @@ export function Component() {
         )}
       </AnimatePresence>
 
-      <CtaBand title="Like what you see?" text="Your website or app could be next. Let's talk about what you need." phone={false} />
+      <CtaBand title="Like what you see?" text="Your website or app could be next. Let's talk about what you need." direct={false} />
     </>
   );
 }

@@ -3,8 +3,13 @@
 export const SITE_URL = "https://www.jmlagumbay.com";
 export const BRAND = "JM Lagumbay";
 export const FULL_NAME = "John Michael Lagumbay";
-export const PHONE_DISPLAY = "(647) 633-7623";
-export const PHONE_HREF = "tel:+16476337623";
+// Business phone. Empty for now (John will add a new business number later). While it's null,
+// nothing phone-related renders anywhere: no call buttons, links, rows or separators.
+// To restore, set it to { display: "(xxx) xxx-xxxx", e164: "+1xxxxxxxxxx" } and re-add
+// "telephone" to the JSON-LD in index.html.
+export const PHONE = null;
+export const PHONE_DISPLAY = PHONE ? PHONE.display : "";
+export const PHONE_HREF = PHONE ? `tel:${PHONE.e164}` : "";
 export const EMAIL = "jmlagumbay422@gmail.com";
 export const LOCATION = "Mississauga, Ontario";
 export const REMOTE = "working remotely with clients across Canada and beyond";

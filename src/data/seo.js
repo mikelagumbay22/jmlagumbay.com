@@ -22,7 +22,7 @@ export const SEO = {
     path: "/work",
     title: "NestWillow, Demo Sites & Projects | JM Lagumbay",
     description:
-      "See NestWillow, my live property-management web app, plus demo websites for salons, bakeries, auto shops and cleaners, and my web and ML projects.",
+      "See NestWillow, my live property-management web app, plus demo websites for local businesses, and my web and ML projects.",
     ogTitle: "NestWillow, Demo Sites & Projects | JM Lagumbay",
     ogDescription:
       "My live web app NestWillow, five demo websites for local businesses, and my web and machine-learning projects.",
@@ -40,10 +40,10 @@ export const SEO = {
     path: "/contact",
     title: "Contact JM Lagumbay | Start Your Website or Web App",
     description:
-      "Tell me what you need, a website or a custom web app. Call or text (647) 633-7623, email me or send the quick form. I work remotely with clients anywhere.",
+      "Tell me what you need, a website or a custom web app. Send the quick form or email me. I work remotely with clients anywhere.",
     ogTitle: "Let's Talk About Your Project | JM Lagumbay",
     ogDescription:
-      "A website or a custom web app? Call or text (647) 633-7623, or send a quick message. I work remotely with clients anywhere.",
+      "A website or a custom web app? Send a quick message or email me. I work remotely with clients anywhere.",
   },
   notFound: {
     path: "/404",

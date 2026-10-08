@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { IconArrowRight, IconDeviceMobile, IconAppWindow, IconWorld, IconPhone } from "@tabler/icons-react";
+import { IconArrowRight, IconDeviceMobile, IconAppWindow, IconWorld, IconPhone, IconMail } from "@tabler/icons-react";
 import Seo from "@/components/Seo";
 import Reveal from "@/components/Reveal";
 import HeroGlow from "@/components/HeroGlow";
@@ -9,13 +9,13 @@ import NestWillowCard from "@/components/NestWillowCard";
 import PreviewPauseButton from "@/components/PreviewPauseButton";
 import CtaBand from "@/components/CtaBand";
 import { DEMOS, FEATURED_DEMOS } from "@/data/work";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
 const HEADLINE = ["I", "build", "fast,", "modern", "websites", "and", "web", "apps", "for", "small", "businesses", "and", "founders."];
 const LIME_FROM = 9; // "small businesses and founders." in lime
 
 const HIGHLIGHTS = [
-  { icon: IconDeviceMobile, title: "Websites that bring in customers", text: "Salons, auto shops, bakeries, cleaners: a site that works on every phone, with tap-to-call, your hours and a map, and that shows up on Google. Packages from $499 (launch price), ready in 3–14 business days." },
+  { icon: IconDeviceMobile, title: "Websites that bring in customers", text: "A site that works on every phone, with tap-to-call, your hours and a map, and that shows up on Google. Packages from $499 (launch price), ready in 3–14 business days." },
   { icon: IconAppWindow, title: "Custom web apps", text: "Dashboards, client portals, booking or management tools, and SaaS MVPs for founders. Built with React, Node, Java/Spring and Python, with a fixed quote before I start." },
   { icon: IconWorld, title: "Clear prices, wherever you are", text: "Website packages are one price, paid once. Apps get a fixed quote. I work remotely with clients across Canada and beyond, so where you\u2019re based doesn\u2019t matter." },
 ];
@@ -51,10 +51,17 @@ export function Component() {
             <Link to="/work" className="btn-ghost">See my work</Link>
           </div>
           <p className="mt-6 text-on-surface-variant">
-            <a href={PHONE_HREF} className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-on-surface hover:text-electric-lime">
-              <IconPhone size={18} stroke={2} aria-hidden="true" className="text-electric-lime" />
-              Call or text {PHONE_DISPLAY}
-            </a>
+            {PHONE ? (
+              <a href={PHONE_HREF} className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-on-surface hover:text-electric-lime">
+                <IconPhone size={18} stroke={2} aria-hidden="true" className="text-electric-lime" />
+                Call or text {PHONE_DISPLAY}
+              </a>
+            ) : (
+              <a href={`mailto:${EMAIL}`} className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-on-surface hover:text-electric-lime">
+                <IconMail size={18} stroke={2} aria-hidden="true" className="shrink-0 text-electric-lime" />
+                <span className="min-w-0 [overflow-wrap:anywhere]">Or email {EMAIL}</span>
+              </a>
+            )}
           </p>
         </div>
       </section>
@@ -107,22 +114,6 @@ export function Component() {
           <Reveal className="mt-8">
             <Link to="/work" className="link inline-flex min-h-[44px] items-center gap-1.5">
               See all my work <IconArrowRight size={18} stroke={2.2} aria-hidden="true" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="trust-title">
-        <div className="wrap grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          <Reveal>
-            <h2 id="trust-title" className="h-section">I run your project like a production line</h2>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="lead">
-              Before I built websites and apps, I spent 18 years in process and quality work at Tesla, SYKES and DigitalStorm. Your project gets the same care: a clear plan, checks at every step, and work that&apos;s ready when I say it will be.
-            </p>
-            <Link to="/about" className="link mt-6 inline-flex min-h-[44px] items-center gap-1.5">
-              Read my story <IconArrowRight size={18} stroke={2.2} aria-hidden="true" />
             </Link>
           </Reveal>
         </div>

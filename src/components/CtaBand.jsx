@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { IconPhone, IconArrowRight } from "@tabler/icons-react";
+import { IconPhone, IconMail, IconArrowRight } from "@tabler/icons-react";
 import Reveal from "./Reveal";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
-export default function CtaBand({ title, text, primary = { to: "/contact", label: "Start your project" }, phone = true }) {
+/** `direct`: show a second button to reach me directly (call/text while a business phone is set in
+ *  site.js, otherwise email). */
+export default function CtaBand({ title, text, primary = { to: "/contact", label: "Start your project" }, direct = true }) {
   return (
     <section className="section" aria-labelledby="cta-title">
       <div className="wrap">
@@ -16,10 +18,16 @@ export default function CtaBand({ title, text, primary = { to: "/contact", label
               {primary.label}
               <IconArrowRight size={18} stroke={2.2} aria-hidden="true" />
             </Link>
-            {phone && (
+            {direct && PHONE && (
               <a href={PHONE_HREF} className="btn-ghost w-full sm:w-auto">
                 <IconPhone size={18} stroke={2} aria-hidden="true" />
                 Call or text <span className="whitespace-nowrap">{PHONE_DISPLAY}</span>
+              </a>
+            )}
+            {direct && !PHONE && (
+              <a href={`mailto:${EMAIL}`} className="btn-ghost w-full sm:w-auto">
+                <IconMail size={18} stroke={2} aria-hidden="true" />
+                Email me
               </a>
             )}
           </div>

@@ -105,7 +105,7 @@ export function Component() {
         </div>
       </section>
 
-      <CtaBand title="Need a website or web app?" primary={{ to: "/services", label: "See services and prices" }} phone={false} />
+      <CtaBand title="Need a website or web app?" primary={{ to: "/services", label: "See services and prices" }} direct={false} />
     </>
   );
 }

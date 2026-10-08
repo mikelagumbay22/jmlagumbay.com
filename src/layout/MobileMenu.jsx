@@ -2,9 +2,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { AnimatePresence, m } from "motion/react";
-import { IconMenu2, IconX, IconPhone } from "@tabler/icons-react";
+import { IconMenu2, IconX, IconPhone, IconMail } from "@tabler/icons-react";
 import Logo from "@/components/Logo";
-import { NAV, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { NAV, EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -127,10 +127,17 @@ export default function MobileMenu() {
               </m.ul>
               <div className="mt-10 flex flex-col gap-3">
                 <Link to="/contact" onClick={close} className="btn-primary">Start your project</Link>
-                <a href={PHONE_HREF} className="btn-ghost">
-                  <IconPhone size={18} stroke={2} aria-hidden="true" />
-                  Call or text {PHONE_DISPLAY}
-                </a>
+                {PHONE ? (
+                  <a href={PHONE_HREF} className="btn-ghost">
+                    <IconPhone size={18} stroke={2} aria-hidden="true" />
+                    Call or text {PHONE_DISPLAY}
+                  </a>
+                ) : (
+                  <a href={`mailto:${EMAIL}`} className="btn-ghost">
+                    <IconMail size={18} stroke={2} aria-hidden="true" />
+                    Email me
+                  </a>
+                )}
               </div>
             </nav>
           </m.div>

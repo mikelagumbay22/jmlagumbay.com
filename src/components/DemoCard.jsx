@@ -14,7 +14,7 @@ export default function DemoCard({ demo, headingLevel = 3 }) {
       rel="noopener noreferrer"
       className="card flex h-full min-w-0 flex-col gap-5 p-4 transition-colors duration-300 hover:border-electric-lime/50 focus-visible:border-electric-lime sm:p-5"
     >
-      <DeviceFrame shot={demo.shot} url={demo.url} alt={`Screenshot of the ${demo.title} demo website home page`} />
+      <DeviceFrame shot={demo.shot} url={demo.url} label={demo.title} alt={`Screenshot of the ${demo.title} demo website home page`} />
       <div className="flex flex-1 flex-col gap-3 px-1">
         <p className="w-fit rounded-full border border-electric-lime/40 px-3 py-1 font-mono text-[12px] font-medium text-electric-lime">{DEMO_LABEL}</p>
         <H className="font-display text-xl font-extrabold leading-tight text-primary">{demo.title}</H>

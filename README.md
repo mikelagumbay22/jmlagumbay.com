@@ -18,7 +18,7 @@ npm run lint
 The form posts to Web3Forms with the access key from `VITE_WEB3FORMS_KEY`. **Never commit the key.**
 - **Local testing:** copy `.env.example` to `.env.local` (git-ignored) and paste the key.
 - **Production:** add the repository secret `VITE_WEB3FORMS_KEY`. The deploy workflow passes it into the build.
-- **If the key is missing:** visitors see the friendly error text with the phone number and email, and the console logs the details.
+- **If the key is missing:** visitors see the friendly error text with the email address, and the console logs the details.
 - **Note:** Web3Forms keys are public by design, because they end up in the browser bundle. Turn on domain restriction in the Web3Forms dashboard.
 
 ## Deploy (GitHub Pages)

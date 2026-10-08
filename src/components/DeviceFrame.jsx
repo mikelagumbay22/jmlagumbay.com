@@ -2,9 +2,11 @@
  *  Pauses on card hover/focus and via the page's pause button; static under prefers-reduced-motion.
  *  `still`: for a short page (e.g. a one-screen landing page) the screen takes the screenshot's own
  *  aspect ratio and nothing moves, instead of auto-scrolling a few pixels.
- *  `priority`: the image is the page's LCP element (loaded eagerly, high fetch priority). */
-export default function DeviceFrame({ shot, url, alt, eager = false, still = false, priority = false }) {
-  const host = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+ *  `priority`: the image is the page's LCP element (loaded eagerly, high fetch priority).
+ *  `label`: text for the fake address bar. Demo cards pass the business name so the demo's hosting
+ *  URL is never shown; without a label the bar shows the URL's host (e.g. NestWillow's own domain). */
+export default function DeviceFrame({ shot, url, label, alt, eager = false, still = false, priority = false }) {
+  const host = label || url.replace(/^https?:\/\//, "").replace(/\/.*$/, "");
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#1b1d1d] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]">
       <div aria-hidden="true" className="flex items-center gap-2 border-b border-white/10 px-3 py-2">

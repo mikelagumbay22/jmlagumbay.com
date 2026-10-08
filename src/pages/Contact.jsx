@@ -3,7 +3,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
-import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, REMOTE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, REMOTE, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" };
 
@@ -33,7 +33,7 @@ export function Component() {
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <Reveal>
             <ul className="space-y-7">
-              <Row icon={IconPhone} label="Call or text"><a href={PHONE_HREF} className={linkCls}>{PHONE_DISPLAY}</a></Row>
+              {PHONE && <Row icon={IconPhone} label="Call or text"><a href={PHONE_HREF} className={linkCls}>{PHONE_DISPLAY}</a></Row>}
               <Row icon={IconMail} label="Email"><a href={`mailto:${EMAIL}`} className={`${linkCls} [overflow-wrap:anywhere]`}>{EMAIL}</a></Row>
               <Row icon={IconMapPin} label="Based in"><span>{LOCATION} · {REMOTE}</span></Row>
               <Row icon={IconBrandLinkedin} label="Online">
@@ -44,7 +44,9 @@ export function Component() {
               </Row>
             </ul>
             <p className="mt-8 rounded-2xl border border-border-subtle bg-graphite-grey p-5 text-on-surface">
-              Prefer to talk? Call or text me. It&apos;s the quickest way.
+              {PHONE
+                ? <>Prefer to talk? Call or text me. It&apos;s the quickest way.</>
+                : <>The easiest way to reach me is the form, or email me any time. I&apos;ll get back to you with the next steps.</>}
             </p>
           </Reveal>
           <Reveal delay={0.08}><ContactForm /></Reveal>

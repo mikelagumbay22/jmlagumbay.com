@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { IconSend, IconCircleCheck, IconAlertTriangle } from "@tabler/icons-react";
-import { EMAIL, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
 // The Web3Forms access key comes ONLY from the build environment (VITE_WEB3FORMS_KEY).
 // Locally: .env.local (git-ignored). Production: GitHub repository secret, passed in by the deploy workflow.
@@ -30,7 +30,7 @@ function validate(f) {
     // (clients outside Canada) may have up to 15 digits (E.164), or 8+ when written with a leading "+".
     const d = phone.replace(/\D/g, "");
     const ok = /^\+/.test(phone) ? d.length >= 8 && d.length <= 15 : d.length >= 10 && d.length <= 15;
-    // Only digits, spaces, ( ) . - and at most ONE leading "+" (rejects "++1 647…" and "647+633+7623").
+    // Only digits, spaces, ( ) . - and at most ONE leading "+" (rejects "++1 905…" and "905+555+0123").
     if (!ok || !/^\+?[\d\s().-]+$/.test(phone)) e.phone = "Please enter a valid phone number, including the country or area code.";
   }
   if (!f.need) e.need = "Please choose what you need. \u201cNot sure yet\u201d is fine.";
@@ -130,7 +130,9 @@ export default function ContactForm() {
       <div className="card p-7 sm:p-9" role="status">
         <IconCircleCheck size={44} stroke={1.8} aria-hidden="true" className="text-electric-lime" />
         <h2 ref={statusRef} tabIndex={-1} className="mt-4 text-2xl font-extrabold">Thanks, your message is on its way!</h2>
-        <p className="mt-3 text-on-surface">I&apos;ll get back to you soon. If it&apos;s urgent, call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a>.</p>
+        <p className="mt-3 text-on-surface">I&apos;ll get back to you soon. If it&apos;s urgent, {PHONE
+          ? <>call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a>.</>
+          : <>email me at <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a>.</>}</p>
         <button type="button" className="btn-primary mt-7" onClick={backToForm}>Send another message</button>
       </div>
     );
@@ -144,7 +146,7 @@ export default function ContactForm() {
           {status === "offline" ? (
             <>Looks like you&apos;re offline. Check your connection and try again.</>
           ) : (
-            <>Please try again in a moment, or call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> or email <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a>.</>
+            <>Please try again in a moment, or {PHONE && <>call or text me at <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> or </>}email <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a>.</>
           )}
         </p>
         <button type="button" className="btn-primary mt-7" onClick={backToForm}>Try again</button>
