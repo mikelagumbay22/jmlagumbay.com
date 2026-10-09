@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, REMOTE, PHONE, PHONE_DISPLAY, PHONE_HREF, RESUME_URL, FULL_NAME } from "@/data/site";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, PHONE, PHONE_DISPLAY, PHONE_HREF, RESUME_URL, FULL_NAME, NORTHPAGE_URL } from "@/data/site";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" };
 
@@ -12,16 +12,18 @@ export default function Footer() {
       <div className="wrap grid gap-10 py-14 md:grid-cols-[1.4fr_1fr]">
         <div className="space-y-4">
           <p className="max-w-md text-on-surface">
-            <strong className="font-display font-extrabold text-primary">JM Lagumbay</strong>: fast, modern websites and web apps for small businesses and founders.
+            <strong className="font-display font-extrabold text-primary">JM Lagumbay</strong>: full-stack web developer. Web apps, APIs and machine learning.
           </p>
           <p className="text-on-surface-variant">
             {PHONE && <>Call or text <a href={PHONE_HREF} className="link">{PHONE_DISPLAY}</a> · </>}
-            Email <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · <span className="whitespace-nowrap">Based in {LOCATION}</span> · {REMOTE}
+            Email <a href={`mailto:${EMAIL}`} className="link [overflow-wrap:anywhere]">{EMAIL}</a> · <span className="whitespace-nowrap">Based in {LOCATION}</span>
+          </p>
+          <p className="text-on-surface-variant">
+            Running a business? See <a href={NORTHPAGE_URL} className="link">Northpage</a>.
           </p>
         </div>
         <nav aria-label="Footer">
           <ul className="grid grid-cols-2 gap-x-6 sm:grid-cols-3">
-            <li><Link to="/services" className={linkCls}>Services</Link></li>
             <li><Link to="/work" className={linkCls}>Work</Link></li>
             <li><Link to="/about" className={linkCls}>About</Link></li>
             <li><Link to="/contact" className={linkCls}>Contact</Link></li>
@@ -33,7 +35,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-border-subtle">
         <p className="wrap py-6 text-sm text-on-surface-variant" suppressHydrationWarning>
-          © {year} {FULL_NAME}. Prices in Canadian dollars. No HST charged.
+          © {year} {FULL_NAME}.
         </p>
       </div>
     </footer>

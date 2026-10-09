@@ -8,7 +8,6 @@ export const routes = [
     entry: "src/layout/Layout.jsx",
     children: [
       { index: true, lazy: () => import("./pages/Home") },
-      { path: "services", lazy: () => import("./pages/Services") },
       { path: "work", lazy: () => import("./pages/Work") },
       { path: "about", lazy: () => import("./pages/About") },
       { path: "contact", lazy: () => import("./pages/Contact") },

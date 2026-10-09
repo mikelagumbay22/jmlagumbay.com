@@ -11,8 +11,8 @@ export function Component() {
       </PageHeader>
       <div className="wrap section flex flex-col gap-3 sm:flex-row">
         <Link to="/" className="btn-primary">Go to the home page</Link>
-        <Link to="/services" className="btn-ghost">See packages and prices</Link>
         <Link to="/work" className="btn-ghost">See my work</Link>
+        <Link to="/about" className="btn-ghost">About me</Link>
       </div>
     </>
   );

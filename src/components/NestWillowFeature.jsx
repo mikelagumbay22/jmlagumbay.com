@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
 import DeviceFrame from "./DeviceFrame";
 import { NESTWILLOW as N } from "@/data/work";
 
@@ -35,9 +34,6 @@ export default function NestWillowFeature() {
             Visit NestWillow <IconArrowUpRight size={18} stroke={2.2} aria-hidden="true" />
             <span className="sr-only">(opens in a new tab)</span>
           </a>
-          <Link to="/services#web-apps" className="btn-ghost">
-            Want an app like this? <IconArrowRight size={18} stroke={2.2} aria-hidden="true" />
-          </Link>
         </div>
       </div>
       {/* Phones: the preview comes first (visual order only; the image isn't focusable) */}

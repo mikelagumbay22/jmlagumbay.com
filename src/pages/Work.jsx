@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { AnimatePresence, m } from "motion/react";
-import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
@@ -101,7 +100,7 @@ export function Component() {
                 <Reveal className="max-w-3xl">
                   <h2 id="demo-sites-title" className="h-section">Demo sites</h2>
                   <p className="lead mt-4">
-                    I built these demo concepts to show local business owners what their site could look like. The businesses are real, but <strong className="text-primary">they didn&apos;t hire me</strong> and these aren&apos;t their official websites.
+                    Demo concepts I designed and built around real local businesses. The businesses are real, but <strong className="text-primary">they didn&apos;t hire me</strong> and these aren&apos;t their official websites.
                   </p>
                 </Reveal>
                 <PreviewPauseButton paused={paused} onToggle={() => setPaused((v) => !v)} />
@@ -111,12 +110,6 @@ export function Component() {
                   <Reveal as="li" key={d.slug} delay={(i % 3) * 0.08}><DemoCard demo={d} /></Reveal>
                 ))}
               </ul>
-              <Reveal className="mt-8">
-                <p className="text-on-surface">
-                  Want one like these for your business?{" "}
-                  <Link to="/services" className="link inline-flex min-h-[44px] items-center gap-1.5">See packages <IconArrowRight size={18} stroke={2.2} aria-hidden="true" /></Link>
-                </p>
-              </Reveal>
             </div>
           </m.section>
         )}
@@ -146,7 +139,7 @@ export function Component() {
         )}
       </AnimatePresence>
 
-      <CtaBand title="Like what you see?" text="Your website or app could be next. Let's talk about what you need." direct={false} />
+      <CtaBand title="Like what you see?" text="Questions about any of these, or want to talk about a developer role? Say hello." />
     </>
   );
 }

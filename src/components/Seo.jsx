@@ -8,7 +8,7 @@ export default function Seo({ page }) {
   const url = SITE_URL + s.path;
   const ogTitle = s.ogTitle || s.title;
   const ogDescription = s.ogDescription || s.description;
-  const alt = "JM Lagumbay: websites and web apps for small businesses, lime text on black";
+  const alt = "JM Lagumbay: full-stack web developer portfolio, lime text on black";
   return (
     <Helmet>
       <html lang="en-CA" />

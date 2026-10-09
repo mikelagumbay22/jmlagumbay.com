@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, m } from "motion/react";
 import { IconMenu2, IconX, IconPhone, IconMail } from "@tabler/icons-react";
 import Logo from "@/components/Logo";
-import { NAV, EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import { NAV, EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF, RESUME_URL } from "@/data/site";
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -126,7 +126,7 @@ export default function MobileMenu() {
                 ))}
               </m.ul>
               <div className="mt-10 flex flex-col gap-3">
-                <Link to="/contact" onClick={close} className="btn-primary">Start your project</Link>
+                <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">Resume<span className="sr-only"> (PDF, opens in a new tab)</span></a>
                 {PHONE ? (
                   <a href={PHONE_HREF} className="btn-ghost">
                     <IconPhone size={18} stroke={2} aria-hidden="true" />

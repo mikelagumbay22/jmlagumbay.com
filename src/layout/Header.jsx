@@ -1,8 +1,8 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { m } from "motion/react";
 import Logo from "@/components/Logo";
 import MobileMenu from "./MobileMenu";
-import { NAV } from "@/data/site";
+import { NAV, RESUME_URL } from "@/data/site";
 
 export default function Header() {
   return (
@@ -38,9 +38,9 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <Link to="/contact" className="btn-primary btn-sm hidden lg:inline-flex">
-          Start your project
-        </Link>
+        <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="btn-primary btn-sm hidden lg:inline-flex">
+          Resume<span className="sr-only"> (PDF, opens in a new tab)</span>
+        </a>
         <MobileMenu />
       </div>
     </header>

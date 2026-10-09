@@ -21,7 +21,7 @@ h1 span{{color:#CCFF00}}
 .bar{{position:absolute;left:0;bottom:0;width:100%;height:10px;background:#CCFF00}}
 </style></head><body><div class="c"><div class="g"></div>
 <div class="e">jmlagumbay.com</div>
-<h1>Websites &amp; web apps for <span>small businesses</span></h1>
+<h1>Full-stack developer building <span>fast, thoughtful web apps</span></h1>
 <div class="f"><img src="{LOGO}" alt=""><div><b>JM Lagumbay</b><br>jmlagumbay422@gmail.com</div></div>
 <div class="bar"></div></div></body></html>"""
 

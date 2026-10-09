@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import Timeline from "@/components/Timeline";
-import CtaBand from "@/components/CtaBand";
 import { EXPERIENCE, EDUCATION, TECH } from "@/data/about";
 import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/data/site";
 
@@ -40,8 +39,8 @@ export function Component() {
             <Reveal><h2 id="story-title" className="h-section">My story</h2></Reveal>
             <Reveal className="mt-6 space-y-5 text-[17px] leading-relaxed text-on-surface">
               <p>I didn&apos;t start out writing code. For 15 years at SYKES in the Philippines, I worked as a process engineer, finding where things went wrong and fixing them for good. Then I moved to California, first as a quality analyst at DigitalStorm and then as a process engineering supervisor at Tesla, where I coached a team of technicians on safety, quality and targets.</p>
-              <p>All those years taught me one thing: people get frustrated when something is harder than it needs to be. Now I fix that on the web. I retrained as a full-stack developer, with a certificate from Uplift Code Camp and a Computer Programming diploma from Sheridan College, and I build websites and web apps.</p>
-              <p>Today I build websites and custom web apps for small businesses and founders, working remotely with clients across Canada and beyond. I also build my own products, like NestWillow. I bring the same habits I learned on the production line to every project: a clear plan, checks at every step, and no loose ends.</p>
+              <p>All those years taught me one thing: people get frustrated when something is harder than it needs to be. Now I fix that on the web. I retrained as a full-stack developer, with a certificate from Uplift Code Camp and a Computer Programming diploma from Sheridan College, and now I build for the web.</p>
+              <p>Today I build full-stack web apps, APIs and machine-learning tools, including my own live product, NestWillow. I bring the same habits from my years in manufacturing and operations to every project: a clear plan, checks at every step, and no loose ends.</p>
             </Reveal>
             <Reveal className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/work" className="btn-primary">See my work <IconArrowRight size={18} stroke={2.2} aria-hidden="true" /></Link>
@@ -105,7 +104,6 @@ export function Component() {
         </div>
       </section>
 
-      <CtaBand title="Need a website or web app?" primary={{ to: "/services", label: "See services and prices" }} direct={false} />
     </>
   );
 }

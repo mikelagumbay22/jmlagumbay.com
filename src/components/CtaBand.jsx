@@ -5,7 +5,7 @@ import { EMAIL, PHONE, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
 
 /** `direct`: show a second button to reach me directly (call/text while a business phone is set in
  *  site.js, otherwise email). */
-export default function CtaBand({ title, text, primary = { to: "/contact", label: "Start your project" }, direct = true }) {
+export default function CtaBand({ title, text, primary = { to: "/contact", label: "Get in touch" }, direct = true }) {
   return (
     <section className="section" aria-labelledby="cta-title">
       <div className="wrap">
